@@ -58,8 +58,18 @@
     "command": "macros.revealFileInTree"
   },
   {
+    "key": "ctrl+0",
+    "command": "macros.revealOnlyFileInTree",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "space f e",
     "command": "macros.revealOnlyFileInTree",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space f e",
+    "command": "macros.revealFileInTree",
     "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
   },
   {
@@ -202,6 +212,17 @@
   {
     "key": "space a t",
     "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space a a",
+    "command": "workbench.panel.chat.view.copilot.focus",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  // Code-specific keybindings (non-AI)
+  {
+    "key": "space g l",
+    "command": "turboConsoleLog.displayLogMessage",
     "when": "editorTextFocus && neovim.mode == 'normal'"
   },
 
