@@ -1,0 +1,305 @@
+// Place your key bindings in this file to override the defaults
+[
+  // Unbind defaults
+  {
+    "key": "ctrl+shift+l",
+    "command": "-workbench.action.editor.changeLanguageMode",
+    "when": "!notebookEditorFocused"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-editor.action.insertCursorAtEndOfEachLineSelected",
+    "when": "editorHasSelection && editorTextFocus"
+  },
+  // ===== Basic Editor Controls =====
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.showCommands"
+  },
+
+  // ===== Navigation - Tabs and Groups =====
+  {
+    "key": "alt+,",
+    "command": "workbench.action.moveEditorLeftInGroup"
+  },
+  {
+    "key": "alt+.",
+    "command": "workbench.action.moveEditorRightInGroup"
+  },
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
+  },
+  {
+    "key": "left",
+    "command": "workbench.action.navigateLeft",
+    "when": "editorTextFocus && neovim.init && neovim.mode != 'insert' && activeEditorGroupIndex != 1"
+  },
+  {
+    "key": "left",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorTextFocus && neovim.init && neovim.mode != 'insert' && activeEditorGroupIndex == 1"
+  },
+
+  // ===== File Explorer and Tree View =====
+  {
+    "key": "ctrl+0",
+    "command": "macros.revealOnlyFileInTree"
+  },
+  {
+    "key": "space f e",
+    "command": "macros.revealFileInTree",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
+  },
+  {
+    "key": ",",
+    "command": "list.collapseAll",
+    "when": "filesExplorerFocus && !exploredit"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "macros.revealOnlyFileInTree",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "(inSearchEditor || searchViewletFocus || workbench.scm.active)"
+  },
+
+  // ===== Space Leader Commands =====
+  // File Operations
+  {
+    "key": "space space",
+    "command": "workbench.action.quickOpen",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space d",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+
+  // Split Management (space t prefix)
+  {
+    "key": "space t h",
+    "command": "workbench.action.moveEditorToLeftGroup",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space t l",
+    "command": "workbench.action.moveEditorToRightGroup",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space w d",
+    "command": "workbench.action.closeEditorsInGroup",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+
+  // Buffer Management (space b prefix)
+  {
+    "key": "space b h",
+    "command": "workbench.action.closeEditorsToTheLeft",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space b l",
+    "command": "workbench.action.closeEditorsToTheRight",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space b o",
+    "command": "workbench.action.closeOtherEditors",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space b w",
+    "command": "workbench.action.closeAllEditors",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+
+  // Code Actions (space c prefix)
+  {
+    "key": "space c u",
+    "command": "typescript.removeUnusedImports",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c f",
+    "command": "editor.action.formatDocument",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space c r",
+    "command": "editor.action.rename",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+
+  // Code Navigation and Git (space g prefix)
+  {
+    "key": "space p d",
+    "command": "editor.action.previewDeclaration",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space g i",
+    "command": "editor.action.peekImplementation",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space g r",
+    "command": "editor.action.referenceSearch.trigger",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space g g",
+    "command": "workbench.view.scm",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space s e",
+    "command": "macros.showExplorer",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space s g",
+    "command": "macros.showGit",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space s s",
+    "command": "macros.showSearch",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space g l",
+    "command": "turboConsoleLog.displayLogMessage",
+    "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  {
+    "key": "space g L",
+    "command": "turboConsoleLog.deleteAllLogMessages",
+    "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  // AI commmands for cursor
+  {
+    "key": "space a t",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space a a",
+    // "command": "workbench.action.focusAuxiliaryBar",
+    "command": "aichat.newchataction",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space a c",
+    "command": "aichat.insertselectionintochat",
+    "when": "editorTextFocus && neovim.mode == 'visual'"
+  },
+  {
+    "key": "cmd+n",
+    "command": "aichat.newchataction",
+    "when": "auxiliaryBarFocus"
+  },
+
+  // ===== Search and Problems =====
+  {
+    "key": "down",
+    "command": "search.focus.nextInputBox",
+    "when": "inSearchEditor || searchViewletFocus"
+  },
+  {
+    "key": "up",
+    "command": "search.focus.previousInputBox",
+    "when": "inSearchEditor || searchViewletFocus"
+  },
+  {
+    "key": "space /",
+    "command": "workbench.action.findInFiles",
+    "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  {
+    "key": "space x",
+    "command": "workbench.actions.view.toggleProblems",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+
+  // ===== Terminal =====
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "workbench.action.previousPanelView",
+    "when": "panelFocus"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "workbench.action.nextPanelView",
+    "when": "panelFocus"
+  },
+
+  // ===== Neovim Specific =====
+  {
+    "key": "ctrl+space",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorTextFocus && neovim.mode == 'insert'"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "vscode-neovim.send",
+    "args": "<C-space>",
+    "when": "editorTextFocus && neovim.init && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "vscode-neovim.send",
+    "args": "<C-BS>",
+    "when": "editorTextFocus && neovim.init && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  // Multi-select
+  {
+    "key": "ctrl+n",
+    "command": "vscode-neovim.send",
+    "args": "<C-n>",
+    "when": "editorTextFocus && neovim.init && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  // Spider movement
+  {
+    "key": "space w",
+    "command": "vscode-neovim.send",
+    "args": "<leader> w",
+    "when": "editorTextFocus && neovim.init && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
+  // ===== Suggestion Navigation =====
+  {
+    "key": "down",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "up",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  }
+]

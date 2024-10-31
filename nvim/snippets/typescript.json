@@ -1,0 +1,1 @@
+{"clo":{"body":"console.log('${1:var}', ${1:var})","prefix":"clo"}}
