@@ -1,4 +1,41 @@
 {
+  // Layer3 / big repo settings
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/coverage": true,
+    // non-l3 excludes
+    "**/*.js.map": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/*?.js": {
+      "when": "$(basename).tsx"
+    }
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/dist/**": true,
+    "**/.next/**": true,
+    "**/coverage/**": true
+  },
+  "typescript.tsserver.maxTsServerMemory": 8192,
+  "typescript.tsserver.useSyntaxServer": "never",
+  "typescript.tsserver.watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriorityPolling"
+  },
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+
   // Editor Core Settings
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.accessibilitySupport": "off",
@@ -37,9 +74,6 @@
   // Language-Specific Settings
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
-  "[clojure]": {
-    "editor.defaultFormatter": "betterthantomorrow.calva"
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
@@ -396,22 +430,6 @@
   "files.associations": {
     "*.css": "css"
   },
-  "files.exclude": {
-    "**/*.js.map": true,
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/.hg": true,
-    "**/.svn": true,
-    "/dist": true,
-    "files.exclude": {
-      "**/*.js": {
-        "when": "$(basename).ts"
-      },
-      "**/*?.js": {
-        "when": "$(basename).tsx"
-      }
-    }
-  },
 
   // Window Settings
   "window.titleBarStyle": "custom",
@@ -422,7 +440,7 @@
   "window.commandCenter": false,
 
   // Workbench Settings
-  "workbench.colorTheme": "Moonlight Italic",
+  "workbench.colorTheme": "Material Theme Palenight High Contrast",
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
@@ -430,9 +448,9 @@
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
-  "workbench.preferredDarkColorTheme": "Moonlight Italic",
+  "workbench.preferredDarkColorTheme": "Material Theme Palenight High Contrast",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredLightColorTheme": "Moonlight Italic",
+  "workbench.preferredLightColorTheme": "Material Theme Palenight High Contrast",
 
   // Theme Customizations
   "workbench.colorCustomizations": {
@@ -482,7 +500,10 @@
     "Backlinked",
     "backlinking",
     "backlinks",
-    "neovim"
+    "clsxm",
+    "neovim",
+    "SOLANA",
+    "trpc"
   ],
   "emmet.showExpandedAbbreviation": "never",
   "eslint.alwaysShowStatus": true,
@@ -536,6 +557,10 @@
     "showSearch": [
       "workbench.view.search",
       "workbench.action.focusActiveEditorGroup"
+    ],
+    "focusCursorNewChat": [
+      "workbench.action.focusAuxiliaryBar",
+      "aichat.newchataction"
     ]
   },
   "explorer.confirmDragAndDrop": false,
@@ -543,5 +568,7 @@
   "editor.fontWeight": "600",
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "astro.updateImportsOnFileMove.enabled": true
+  "astro.updateImportsOnFileMove.enabled": true,
+  "tailwind-fold.autoFold": true,
+  "cSpell.enableFiletypes": ["!json"]
 }

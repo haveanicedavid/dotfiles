@@ -55,17 +55,7 @@
   // ===== File Explorer and Tree View =====
   {
     "key": "ctrl+0",
-    "command": "macros.revealFileInTree"
-  },
-  {
-    "key": "ctrl+0",
-    "command": "macros.revealOnlyFileInTree",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "space f e",
-    "command": "macros.revealOnlyFileInTree",
-    "when": "editorTextFocus && neovim.mode == 'normal'"
+    "command": "macros.revealOnlyFileInTree"
   },
   {
     "key": "space f e",
@@ -78,14 +68,14 @@
     "when": "filesExplorerFocus && !exploredit"
   },
   {
+    "key": "ctrl+e",
+    "command": "macros.revealOnlyFileInTree",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
+  },
+  {
     "key": "ctrl+c",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "(inSearchEditor || searchViewletFocus || workbench.scm.active)"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "macros.revealFileInTree",
-    "when": "editorTextFocus && neovim.init && neovim.mode == 'normal'"
   },
 
   // ===== Space Leader Commands =====
@@ -199,13 +189,8 @@
     "when": "editorTextFocus && neovim.mode == 'normal'"
   },
   {
-    "key": "cmd+l",
+    "key": "space g l",
     "command": "turboConsoleLog.displayLogMessage",
-    "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
-  },
-  {
-    "key": "cmd+shift+l",
-    "command": "turboConsoleLog.deleteAllLogMessages",
     "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
   },
   // AI commmands for cursor
@@ -216,14 +201,28 @@
   },
   {
     "key": "space a a",
-    "command": "workbench.panel.chat.view.copilot.focus",
+    "command": "workbench.action.focusAuxiliaryBar",
     "when": "editorTextFocus && neovim.mode == 'normal'"
   },
-  // Code-specific keybindings (non-AI)
   {
-    "key": "space g l",
-    "command": "turboConsoleLog.displayLogMessage",
+    "key": "space a n",
+    "command": "macros.focusCursorNewChat",
     "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
+  {
+    "key": "space a c",
+    "command": "aichat.insertselectionintochat",
+    "when": "editorTextFocus && neovim.mode == 'visual'"
+  },
+  {
+    "key": "cmd+n",
+    "command": "aichat.newchataction",
+    "when": "auxiliaryBarFocus"
+  },
+  {
+    "key": "cmd+a",
+    "command": "aichat.showchatdropdown",
+    "when": "auxiliaryBarFocus"
   },
 
   // ===== Search and Problems =====
@@ -247,11 +246,23 @@
     "command": "workbench.actions.view.toggleProblems",
     "when": "editorTextFocus && neovim.mode == 'normal'"
   },
+  // ======= highlights (don't work) =======
+
+  {
+    "key": "space h",
+    "command": "highlightwords.addHighlight",
+    "when": "editorTextFocus && neovim.mode == 'visual'"
+  },
+  {
+    "key": "space shift+h",
+    "command": "highlightwords.removeAllHighlights",
+    "when": "editorTextFocus && neovim.mode == 'normal'"
+  },
 
   // ===== Terminal =====
   {
     "key": "ctrl+;",
-    "command": "workbench.action.terminal.toggleTerminal"
+    "command": "workbench.action.togglePanel"
   },
   {
     "key": "shift+cmd+[",
@@ -306,5 +317,20 @@
     "key": "up",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+cmd+,",
+    "command": "-editor.action.inPlaceReplace.up",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+,",
+    "command": "aiSettings.action.open",
+    "when": "!isSettingsPaneOpen"
+  },
+  {
+    "key": "shift+cmd+j",
+    "command": "-aiSettings.action.open",
+    "when": "!isSettingsPaneOpen"
   }
 ]

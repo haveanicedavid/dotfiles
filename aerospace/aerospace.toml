@@ -195,6 +195,11 @@ check-further-callbacks = true
 if.app-id = 'com.apple.Safari'
 run = ['layout tiling']
 
+# # SigmaOS - S
+# [[on-window-detected]]
+# if.app-id = 'com.sigmaos.sigmaos.macos'
+# run = ['layout tiling', 'move-node-to-workspace S']
+
 # Kitty - V
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
@@ -203,10 +208,10 @@ run = ['layout tiling', 'move-node-to-workspace V']
 # Mail and calendar - M
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = ['layout tiling', 'move-node-to-workspace M']
+run = ['layout floating', 'move-node-to-workspace M']
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = ['layout tiling', 'move-node-to-workspace M']
+run = ['layout floating', 'move-node-to-workspace M']
 
 # Dev browsers - W
 [[on-window-detected]]
@@ -247,10 +252,10 @@ run = ['layout tiling', 'move-node-to-workspace N']
 if.app-id = 'com.linear'
 run = ['layout tiling', 'move-node-to-workspace N']
 
-# Figma - Q
+# Figma - A
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
-run = ['layout tiling', 'move-node-to-workspace Q']
+run = ['layout tiling', 'move-node-to-workspace A']
 
 # Postico - T
 [[on-window-detected]]
