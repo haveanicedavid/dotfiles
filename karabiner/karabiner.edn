@@ -7,7 +7,7 @@
              :sim     74}} ; simultaneous_threshold_milliseconds
  :simlayer-threshold 174
  :simlayers {;; left-hand on GASC
-             :a-mode {:key :a} ;; left alt
+             ;; :a-mode {:key :a} ;; left alt
              :s-mode {:key :s} ;; left control
              :d-mode {:key :d} ;; left command
              :f-mode {:key :f} ;; left shift
