@@ -190,15 +190,22 @@ alt-shift-l = ['join-with right', 'mode main']
 run = 'layout floating'
 check-further-callbacks = true
 
-# Safari - S
+# Safari - Move GitHub to workspace 3
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
-run = ['layout tiling']
+if.window-title-regex-substring = '.*github\.com\/layer3xyz.*'
+run = ['move-node-to-workspace 3']
+check-further-callbacks = true
 
-# # SigmaOS - S
-# [[on-window-detected]]
-# if.app-id = 'com.sigmaos.sigmaos.macos'
-# run = ['layout tiling', 'move-node-to-workspace S']
+# Safari - Default to floating, but tiling on workspace 3 & S
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+if.workspace = 'S'
+run = ['layout tiling']
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+if.workspace = '3'
+run = ['layout tiling']
 
 # Kitty - V
 [[on-window-detected]]
@@ -236,12 +243,15 @@ if.app-id = 'ru.keepcoder.Telegram'
 run = ['layout tiling', 'move-node-to-workspace C']
 
 
-# AI Cursor - D
+# IDEs - D
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = ['layout tiling', 'move-node-to-workspace D']
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
+run = ['layout tiling', 'move-node-to-workspace D']
+[[on-window-detected]]
+if.app-id = 'com.exafunction.windsurf'
 run = ['layout tiling', 'move-node-to-workspace D']
 
 # Notes - N

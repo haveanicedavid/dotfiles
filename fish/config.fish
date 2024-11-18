@@ -37,6 +37,7 @@ alias cpwd="pwd | tr -d '\n' | pbcopy"
 
 # Applications
 alias c="open -a Cursor ."
+alias s="windsurf ."
 abbr y yarn
 abbr yz yazi
 abbr p pnpm
