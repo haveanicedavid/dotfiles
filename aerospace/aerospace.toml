@@ -86,10 +86,10 @@ alt-o = 'layout accordion vertical horizontal '
 alt-i = 'layout floating tiling'
 # alt-x = 'close'
 # alt-shift-x = 'close-all-windows-but-current'
-alt-cmd-h = 'join-with left'
-alt-cmd-j = 'join-with down'
-alt-cmd-k = 'join-with up'
-alt-cmd-l = 'join-with right'
+# alt-cmd-h = 'join-with left'
+# alt-cmd-j = 'join-with down'
+# alt-cmd-k = 'join-with up'
+# alt-cmd-l = 'join-with right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
@@ -206,6 +206,11 @@ run = ['layout tiling']
 if.app-id = 'com.apple.Safari'
 if.workspace = '3'
 run = ['layout tiling']
+
+# Orion - Default to floating, but tiling on workspace 3 & S
+[[on-window-detected]]
+if.app-id = 'com.kagi.kagimacOS'
+run = ['layout floating', 'move-node-to-workspace S']
 
 # Kitty - V
 [[on-window-detected]]
