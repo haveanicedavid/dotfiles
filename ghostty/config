@@ -1,0 +1,85 @@
+auto-update = download
+
+macos-titlebar-style = transparent
+# macos-titlebar-style = tabs
+# macos-titlebar-style = hidden
+gtk-tabs-location = bottom
+
+font-size = 14.47
+
+# background-opacity = 0.90
+# background-blur-radius = 20
+# background-opacity = 0.85
+# background-blur-radius = 70
+
+# title = "Ghostty 👻"
+
+# term = "xterm-256color"
+shell-integration = "detect"
+
+# custom-shader = /Users/j/Downloads/crt.glsl
+
+
+mouse-scroll-multiplier = 1
+
+# macos-option-as-alt = left
+mouse-hide-while-typing = true
+confirm-close-surface = false
+
+clipboard-read = "allow"
+clipboard-paste-protection = false
+
+
+font-thicken = true
+font-family = "Liga SFMono Nerd Font"
+# font-family = "SF Mono"
+font-size = 14.47
+font-feature = zero
+font-feature = ss01
+font-feature = ss02
+font-feature = ss03
+font-feature = ss04
+font-feature = ss05
+font-feature = ss06
+font-feature = calt
+font-feature = liga
+
+# keybind = cmd+equal=increase_font_size:1
+# keybind = cmd+minus=decrease_font_size:1
+# keybind = cmd+shift+equal=reset_font_size
+keybind = cmd+zero=reset_font_size
+keybind = cmd+c=copy_to_clipboard
+keybind = cmd+v=paste_from_clipboard
+# keybind = cmd+enter=toggle_fullscreen
+# keybind = cmd+ctrl+shift+w=quit
+# 
+# keybind = cmd+alt+shift+r=reload_config
+# keybind = cmd+alt+shift+o=open_config
+# keybind = cmd+z=reload_config
+
+
+# open_config
+  # - key: RBracket
+  #   mods: Command
+  #   chars: "\x02n"
+  # - key: LBracket
+  #   mods: Command
+  #   chars: "\x02p"
+
+
+cursor-color = f8db4a
+# cursor-opacity = 0.569
+# cursor-text = 15cfbc
+
+
+# # https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points
+# # powerline & powerline-extras
+font-codepoint-map = U+e0b0-U+e0b3,U+e0b4-U+e0c8,U+e0cc-U+e0d4,U+e0ca=JetBrainsMono Nerd Font Mono
+
+
+
+# theme = catppuccin-frappe
+# theme = catppuccin-latte
+theme = catppuccin-macchiato
+
+# theme = catppuccin-mocha

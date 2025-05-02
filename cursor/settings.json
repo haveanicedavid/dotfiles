@@ -43,7 +43,7 @@
   "editor.autoIndent": "advanced",
   "editor.bracketPairColorization.enabled": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Liga SFMono Nerd Font,SF Mono,MonoLisa,DankMono-Bold, OperatorMonoLig-book,OperatorMonoSSMLig-book,FiraCode-retina, Operator Mono",
+  "editor.fontFamily": "Ligalex Mono,Liga SFMono Nerd Font,SF Mono,MonoLisa,DankMono-Bold, OperatorMonoLig-book,OperatorMonoSSMLig-book,FiraCode-retina, Operator Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 14.47,
   "editor.formatOnPaste": true,
@@ -51,7 +51,6 @@
   "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.enabled": true,
   "editor.lineHeight": 1.174,
-  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.selectionHighlight": false,
@@ -115,16 +114,16 @@
   "window.commandCenter": false,
 
   // Workbench Settings
-  "workbench.colorTheme": "Material Theme Palenight High Contrast",
-  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.statusBar.visible": true,
   "workbench.list.defaultFindMode": "filter",
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
-  "workbench.preferredDarkColorTheme": "Material Theme Palenight High Contrast",
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredLightColorTheme": "Material Theme Palenight High Contrast",
+  "workbench.preferredLightColorTheme": "Catppuccin Frappé",
 
   // Theme Customizations
   "workbench.colorCustomizations": {
@@ -242,5 +241,22 @@
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "astro.updateImportsOnFileMove.enabled": true,
-  "cSpell.enableFiletypes": ["!json"]
+  "cSpell.enableFiletypes": ["!json"],
+  "cursor.composer.agentLoopOnLints": false,
+  "extensions.ignoreRecommendations": true,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "workbench.preferredHighContrastLightColorTheme": "Catppuccin Frappé",
+  "editor.renderWhitespace": "trailing",
+  "security.promptForLocalFileProtocolHandling": false
 }

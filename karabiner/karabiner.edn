@@ -7,7 +7,7 @@
              :sim     74}} ; simultaneous_threshold_milliseconds
  :simlayer-threshold 174
  :simlayers {;; left-hand on GASC
-             ;; :a-mode {:key :a} ;; left alt
+             ; :a-mode {:key :a} ;; left alt
              :s-mode {:key :s} ;; left control
              :d-mode {:key :d} ;; left command
              :f-mode {:key :f} ;; left shift
@@ -37,7 +37,7 @@
                  [:!W#SOCl :right_arrow]
                  [:!Ww :!Oright_arrow]
                  [:!Wb :!Oleft_arrow]
-                 ; [:!Wdelete_or_backspace :!Odelete_or_backspace]
+                 [:!Wdelete_or_backspace :!Odelete_or_backspace]
                  [:!Wcomma :!CSopen_bracket]
                  [:!Wperiod :!CSclose_bracket]]}
         {:des "Left Command to A" ;; GASC
@@ -391,7 +391,7 @@
                  [:##backslash :!Tbackslash]
                  [:##open_bracket :!Topen_bracket]
                  [:##close_bracket :!Tclose_bracket]
-                 [:##delete_or_backspace :!Tdelete_or_backspace]
+                 [:##delete_or_backspace :!Odelete_or_backspace]
                  [:##grave_accent_and_tilde :!Tgrave_accent_and_tilde]
                  [:##quote :!Tquote]
                  [:##return_or_enter :!Treturn_or_enter]
@@ -629,7 +629,7 @@
                   ; top-row
                  [:##q :!Eq]
                  [:##w :!Ew]
-                 [:##e :!Ee]
+                 ; [:##e :!Ee] ; common typo
                  [:##r :!Er]
                  [:##t :!Et]
                  ; [:##y :!Ey] ; common typo

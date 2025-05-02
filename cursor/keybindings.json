@@ -193,6 +193,11 @@
     "command": "turboConsoleLog.displayLogMessage",
     "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
   },
+  {
+    "key": "space g d",
+    "command": "turboConsoleLog.deleteAllLogMessages",
+    "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
   // AI commmands for cursor
   {
     "key": "space a t",
@@ -332,5 +337,28 @@
     "key": "shift+cmd+j",
     "command": "-aiSettings.action.open",
     "when": "!isSettingsPaneOpen"
+  },
+  {
+    "key": "cmd+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.findPrevious",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "-workbench.action.terminal.openDetectedLink",
+    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
   }
 ]

@@ -421,7 +421,7 @@
   "window.commandCenter": false,
 
   // Workbench Settings
-  "workbench.colorTheme": "Moonlight Italic",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
@@ -429,7 +429,7 @@
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
-  "workbench.preferredDarkColorTheme": "Moonlight Italic",
+  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
   "workbench.preferredLightColorTheme": "Moonlight Italic",
 
