@@ -9,10 +9,6 @@ set -x GOPATH $HOME/go
 set -x GOBIN $GOPATH/bin
 set -x GOROOT (brew --prefix golang)/libexec
 set -x PATH $PATH $GOROOT/bin $GOPATH/bin
-set -gx PNPM_HOME /Users/ddaniel/Library/pnpm
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
-end
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
@@ -51,6 +47,7 @@ if status is-interactive
     # Applications
     alias c 'open -a Cursor .'
     alias s 'windsurf .'
+    alias claude "/Users/ddaniel/.claude/local/claude"
     abbr y yarn
     abbr yz yazi
     abbr p pnpm

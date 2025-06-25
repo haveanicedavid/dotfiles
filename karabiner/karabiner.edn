@@ -7,11 +7,11 @@
              :sim     74}} ; simultaneous_threshold_milliseconds
  :simlayer-threshold 174
  :simlayers {;; left-hand on GASC
-             ; :a-mode {:key :a} ;; left alt
+             :a-mode {:key :a} ;; left alt
              :s-mode {:key :s} ;; left control
              :d-mode {:key :d} ;; left command
              :f-mode {:key :f} ;; left shift
-              ;; right-hand on SGCA (=inverted GASC)
+             ;; right-hand on SGCA (=inverted GASC)
              :j-mode {:key :j} ;; right shift
              :k-mode {:key :k} ;; right command
              :l-mode {:key :l} ;; right control
@@ -42,13 +42,13 @@
                  [:!Wperiod :!CSclose_bracket]]}
         {:des "Left Command to A" ;; GASC
          :rules [[:condi :a-mode :!s-mode :!d-mode :!f-mode :!j-mode :!k-mode :!l-mode :!semicolon-mode]
-                  ;; home row mods GASC layout
+                 ;; home row mods GASC layout
                  ; [:##a :left_command]
                  [:##s :left_option]
                  [:##d :left_shift]
                  [:##f :left_control]
 
-                  ;; qwerty 30x grid
+                 ;; qwerty 30x grid
                   ; top-row
                  [:##q :!Cq]
                  [:##w :!Cw]
@@ -85,7 +85,7 @@
                  [:##period :!Cperiod]
                  [:##slash :!Cslash]
 
-                  ;; number row
+                 ;; number row
                  [:##1 :!C1]
                  [:##2 :!C2]
                  [:##3 :!C3]
@@ -97,7 +97,7 @@
                  [:##9 :!C9]
                  [:##0 :!C0]
 
-                  ;; other keys
+                 ;; other keys
                  [:##hyphen :!Chyphen]
                  [:##equal_sign :!Cequal_sign]
                  [:##backslash :!Cbackslash]
@@ -115,7 +115,7 @@
                  [:##down_arrow :!Cdown_arrow]
                  [:##spacebar :!Cspacebar]
 
-                  ;;functions
+                 ;;functions
                  [:##f1 :!Cf1]
                  [:##f2 :!Cf2]
                  [:##f3 :!Cf3]
@@ -138,7 +138,7 @@
                  [:##f20 :!Cf20]]}
         {:des "Left Option to S" ;; GASC for left-hand
          :rules [[:condi :!a-mode :s-mode :!d-mode :!f-mode :!j-mode :!k-mode :!l-mode :!semicolon-mode]
-                  ;; home row mods GASC layout
+                 ;; home row mods GASC layout
                  [:##a :left_command]
                  ; [:##s :left_option]
                  [:##d :left_shift]
@@ -181,7 +181,7 @@
                  [:##period :!Operiod]
                  [:##slash :!Oslash]
 
-                  ;; number row
+                 ;; number row
                  [:##1 :!O1]
                  [:##2 :!O2]
                  [:##3 :!O3]
@@ -193,7 +193,7 @@
                  [:##9 :!O9]
                  [:##0 :!O0]
 
-                  ;; other keys
+                 ;; other keys
                  [:##hyphen :!Ohyphen]
                  [:##equal_sign :!Oequal_sign]
                  [:##backslash :!Obackslash]
@@ -211,7 +211,7 @@
                  [:##down_arrow :!Odown_arrow]
                  [:##spacebar :!Ospacebar]
 
-                  ;;functions
+                 ;;functions
                  [:##f1 :!Of1]
                  [:##f2 :!Of2]
                  [:##f3 :!Of3]
@@ -234,7 +234,7 @@
                  [:##f20 :!Of20]]}
         {:des "Left Shift to D" ;; GASC
          :rules [[:condi :!a-mode :!s-mode :d-mode :!f-mode :!j-mode :!k-mode :!l-mode :!semicolon-mode]
-                  ;; home row mods GASC layout
+                 ;; home row mods GASC layout
                  [:##a :left_command]
                  [:##s :left_option]
                  ; [:##d :left_shift]
@@ -276,7 +276,7 @@
                  [:##period :!Speriod]
                  [:##slash :!Sslash]
 
-                  ;; number row
+                 ;; number row
                  [:##1 :!S1]
                  [:##2 :!S2]
                  [:##3 :!S3]
@@ -288,7 +288,7 @@
                  [:##9 :!S9]
                  [:##0 :!S0]
 
-                  ;; other keys
+                 ;; other keys
                  [:##hyphen :!Shyphen]
                  [:##equal_sign :!Sequal_sign]
                  [:##backslash :!Sbackslash]
@@ -306,7 +306,7 @@
                  [:##down_arrow :!Sdown_arrow]
                  [:##spacebar :!Sspacebar]
 
-                  ;;functions
+                 ;;functions
                  [:##f1 :!Sf1]
                  [:##f2 :!Sf2]
                  [:##f3 :!Sf3]
@@ -329,13 +329,13 @@
                  [:##f20 :!Sf20]]}
         {:des "Left Control to F" ;; GASC
          :rules [[:condi :!a-mode :!s-mode :!d-mode :f-mode :!j-mode :!k-mode :!l-mode :!semicolon-mode]
-                  ;; home row mods GASC layout
+                 ;; home row mods GASC layout
                  [:##a :left_command]
                  [:##s :left_option]
                  [:##d :left_shift]
                  ; [:##f :left_control]
 
-                  ;; qwerty 30x grid
+                 ;; qwerty 30x grid
                   ; top-row
                  [:##q :!Tq]
                  [:##w :!Ow]
@@ -355,7 +355,7 @@
                  ; [:##f :!Tf]
                  [:##g :!Tg]
                  [:##semicolon :!Tsemicolon]
-                  ;; S + hjkl = arrow keys
+                 ;; S + hjkl = arrow keys
                  [:##h :left_arrow]
                  [:##j :down_arrow]
                  [:##k :up_arrow]
@@ -373,7 +373,7 @@
                  [:##period :!CSclose_bracket]
                  [:##slash :!Tslash]
 
-                  ;; number row
+                 ;; number row
                  [:##1 :!T1]
                  [:##2 :!T2]
                  [:##3 :!T3]
@@ -385,7 +385,7 @@
                  [:##9 :!T9]
                  [:##0 :!T0]
 
-                  ;; other keys
+                 ;; other keys
                  [:##hyphen :!Thyphen]
                  [:##equal_sign :!Tequal_sign]
                  [:##backslash :!Tbackslash]
@@ -393,7 +393,7 @@
                  [:##close_bracket :!Tclose_bracket]
                  [:##delete_or_backspace :!Odelete_or_backspace]
                  [:##grave_accent_and_tilde :!Tgrave_accent_and_tilde]
-                 [:##quote :!Tquote]
+                 [:##quote :grave_accent_and_tilde] ;; quote = grave_accent_and_tilde
                  [:##return_or_enter :!Treturn_or_enter]
                  [:##tab :!Ttab]
                  [:##escape :!Tescape]
@@ -403,7 +403,7 @@
                  [:##down_arrow :!Tdown_arrow]
                  [:##spacebar :!Tspacebar]
 
-                  ;;functions
+                 ;;functions
                  [:##f1 :!Tf1]
                  [:##f2 :!Tf2]
                  [:##f3 :!Tf3]
@@ -425,16 +425,16 @@
                  [:##f19 :!Tf19]
                  [:##f20 :!Tf20]]}
 
-         ;; right-hand on inverted GASC = CSAG
+        ;; right-hand on inverted GASC = CSAG
         {:des "Right Control to J" ;; CSAG
          :rules [[:condi :!a-mode :!s-mode :!d-mode :!f-mode :j-mode :!k-mode :!l-mode :!semicolon-mode]
-                  ;; home row mods GASC layout
+                 ;; home row mods GASC layout
                  ; [:##j :right_control]
                  [:##k :right_shift]
                  [:##l :right_option]
                  [:##semicolon :right_command]
 
-                  ;; qwerty 30x grid
+                 ;; qwerty 30x grid
                   ; top-row
                  [:##q :!Wq]
                  [:##w :!Eright_arrow] ;; vim move word / alt + right
@@ -471,7 +471,7 @@
                  [:##period :!Wperiod]
                  [:##slash :!Wslash]
 
-                  ;; number row
+                 ;; number row
                  [:##1 :!W1]
                  [:##2 :!W2]
                  [:##3 :!W3]
@@ -483,7 +483,7 @@
                  [:##9 :!W9]
                  [:##0 :!W0]
 
-                  ;; other keys
+                 ;; other keys
                  [:##hyphen :!Whyphen]
                  [:##equal_sign :!Wequal_sign]
                  [:##backslash :!Wbackslash]
@@ -501,7 +501,7 @@
                  [:##down_arrow :!Wdown_arrow]
                  [:##spacebar :!Wspacebar]
 
-                  ;;functions
+                 ;;functions
                  [:##f1 :!Wf1]
                  [:##f2 :!Wf2]
                  [:##f3 :!Wf3]
@@ -524,7 +524,7 @@
                  [:##f20 :!Wf20]]}
         {:des "Right Shift to K" ;; CSAG
          :rules [[:condi :!a-mode :!s-mode :!d-mode :!f-mode :!j-mode :k-mode :!l-mode :!semicolon-mode]
-                  ;; home row mods GASC layout
+                 ;; home row mods GASC layout
                  [:##j :right_control]
                  ; [:##k :right_shift]
                  [:##l :right_option]
@@ -566,7 +566,7 @@
                  [:##period :!Rperiod]
                  [:##slash :!Rslash]
 
-                  ;; number row
+                 ;; number row
                  [:##1 :!R1]
                  [:##2 :!R2]
                  [:##3 :!R3]
@@ -578,7 +578,7 @@
                  [:##9 :!R9]
                  [:##0 :!R0]
 
-                  ;; other keys
+                 ;; other keys
                  [:##hyphen :!Rhyphen]
                  [:##equal_sign :!Requal_sign]
                  [:##backslash :!Rbackslash]
@@ -596,7 +596,7 @@
                  [:##down_arrow :!Rdown_arrow]
                  [:##spacebar :!Rspacebar]
 
-                  ;;functions
+                 ;;functions
                  [:##f1 :!Rf1]
                  [:##f2 :!Rf2]
                  [:##f3 :!Rf3]
@@ -619,13 +619,13 @@
                  [:##f20 :!Rf20]]}
         {:des "Right Option to L" ;; CSAG
          :rules [[:condi :!a-mode :!s-mode :!d-mode :!f-mode :!j-mode :!k-mode :l-mode :!semicolon-mode]
-                  ;; home row mods GASC layout
+                 ;; home row mods GASC layout
                  [:##j :right_control]
                  [:##k :right_shift]
                  ; [:##l :right_option]
                  [:##semicolon :right_command]
 
-;; qwerty 30x grid
+                 ;; qwerty 30x grid
                   ; top-row
                  [:##q :!Eq]
                  [:##w :!Ew]
@@ -662,7 +662,7 @@
                  [:##period :!Eperiod]
                  [:##slash :!Eslash]
 
-                  ;; number row
+                 ;; number row
                  [:##1 :!E1]
                  [:##2 :!E2]
                  [:##3 :!E3]
@@ -674,7 +674,7 @@
                  [:##9 :!E9]
                  [:##0 :!E0]
 
-                  ;; other keys
+                 ;; other keys
                  [:##hyphen :!Ehyphen]
                  [:##equal_sign :!Eequal_sign]
                  [:##backslash :!Ebackslash]
@@ -692,7 +692,7 @@
                  [:##down_arrow :!Edown_arrow]
                  [:##spacebar :!Espacebar]
 
-                  ;;functions
+                 ;;functions
                  [:##f1 :!Ef1]
                  [:##f2 :!Ef2]
                  [:##f3 :!Ef3]
@@ -715,13 +715,13 @@
                  [:##f20 :!Ef20]]}
         {:des "Right Command to ;" ;; CSAG
          :rules [[:condi :!a-mode :!s-mode :!d-mode :!f-mode :!j-mode :!k-mode :!l-mode :semicolon-mode]
-                  ;; home row mods GASC layout
+                 ;; home row mods GASC layout
                  [:##j :right_control]
                  [:##k :right_shift]
                  [:##l :right_option]
                  ; [:##semicolon :right_command]
 
-                  ;; qwerty 30x grid
+                 ;; qwerty 30x grid
                   ; top-row
                  [:##q :!Qq]
                  [:##w :!Qw]
@@ -758,7 +758,7 @@
                  [:##period :!Qperiod]
                  [:##slash :!Qslash]
 
-                  ;; number row
+                 ;; number row
                  [:##1 :!Q1]
                  [:##2 :!Q2]
                  [:##3 :!Q3]
@@ -770,7 +770,7 @@
                  [:##9 :!Q9]
                  [:##0 :!Q0]
 
-                  ;; other keys
+                 ;; other keys
                  [:##hyphen :!Qhyphen]
                  [:##equal_sign :!Qequal_sign]
                  [:##backslash :!Qbackslash]
@@ -788,7 +788,7 @@
                  [:##down_arrow :!Qdown_arrow]
                  [:##spacebar :!Qspacebar]
 
-                  ;;functions
+                 ;;functions
                  [:##f1 :!Qf1]
                  [:##f2 :!Qf2]
                  [:##f3 :!Qf3]

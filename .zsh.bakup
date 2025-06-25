@@ -1,0 +1,117 @@
+# Homebrew shellenv (must be first)
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Now it's safe to use brew in the rest of your config
+export GOROOT="$(brew --prefix golang)/libexec"
+
+
+# --- Environment Variables ---
+export THEME_DISPLAY_DATE=no
+export FISH_GREETING=''
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin:$BUN_INSTALL/bin:/Applications/Postgres.app/Contents/Versions/latest/bin"
+
+# --- Aliases ---
+# Terminal themes
+alias dmm='kitty +kitten themes --reload-in=all Tokyo Night && theme_dracula && fig theme catppuccin'
+alias lmm='kitty +kitten themes --reload-in=all Tomorrow && theme_tomorrow && fig theme light'
+alias dm='theme_dracula'
+alias lm='theme_tomorrow'
+
+# Configs
+alias dotf='cd ~/dotfiles && open -a Cursor .'
+alias gitc='nvim ~/.gitconfig'
+alias lazyc='cd ~/Library/Application\ Support/lazygit/ && nvim'
+alias kittyupdate='curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin'
+alias kittyrestart='kitty +kitten restart'
+alias disable-spotlight='sudo mdutil -i off'
+alias enable-spotlight='sudo mdutil -i on'
+alias cc='clear'
+
+# Directories
+alias cdc='cd ~/code/'
+alias cdm='cd ~/code/metta'
+alias cdms='cd ~/code/metta/extension/mettatate/mettatate-sidepanel/'
+alias cdl='cd ~/dev/l3/'
+alias cdll='cd ~/dev/l3/layer3/'
+alias cdmt='cd ~/code/metta/mettatron'
+alias cdk='cd ~/code/kaizen/kaizen-mobile'
+
+# Applications
+alias c='open -a Cursor .'
+alias s='windsurf .'
+alias mig='npm run db:migrate'
+alias simopen='xcrun simctl openurl booted'
+
+# Git
+alias sq="git commit -am 'squish me'"
+alias pull='git pull origin'
+alias push='git push origin HEAD'
+alias gitb='git branch'
+alias gs='git status'
+alias grv='git remote -v'
+alias mas='git checkout master'
+alias mai='git checkout main'
+alias grc='git rebase --continue'
+alias grm='git rebase -i main'
+alias grd='git rebase -i development'
+alias gmm='git merge master'
+alias gmd='git merge dev'
+alias lol='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias lola='git log --graph --decorate --pretty=oneline --abbrev-commit --all'
+alias vim='nvim'
+alias vi='nvim'
+
+# System
+alias show-hidden='defaults write com.apple.finder AppleShowAllFiles -bool true ; killall Finder'
+alias hide-hidden='defaults write com.apple.finder AppleShowAllFiles -bool false ; killall Finder'
+
+# --- Abbreviations (Fish abbr equivalents) ---
+# Use zsh-abbr or zsh-autosuggestions for true abbr-like behavior
+# Otherwise, use aliases for simple cases
+alias y='yarn'
+alias yz='yazi'
+alias p='pnpm'
+alias n='npm'
+alias nr='npm run'
+alias nv='nvim'
+alias lg='lazygit'
+alias com='git commit -m'
+alias comc='git commit -m "chore:"
+alias comfe='git commit -m "feat:"
+alias comfi='git commit -m "fix:"
+alias comd='git commit -m "docs:"
+alias comp='git commit -m "perf:"
+alias comr='git commit -m "refactor:"
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gbd='git branch -D'
+alias gm='git merge'
+alias ga='git add'
+alias gfo='git fetch origin --prune'
+
+# --- Plugin/Integration Setup ---
+# zoxide
+if [[ -x "$(command -v zoxide)" ]]; then
+  eval "$(zoxide init zsh)"
+fi
+
+# rbenv
+if [[ -x "$(command -v rbenv)" ]]; then
+  eval "$(rbenv init -)"
+fi
+
+# Docker Desktop fish init (if needed, port to zsh or source if compatible)
+# source /Users/ddaniel/.docker/init-fish.sh || true
+
+# --- Prompt ---
+# Use starship or your preferred prompt
+if command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+# --- End of .zshrc --- 
