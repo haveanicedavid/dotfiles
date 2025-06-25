@@ -193,6 +193,11 @@
     "command": "turboConsoleLog.displayLogMessage",
     "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
   },
+  {
+    "key": "space g d",
+    "command": "turboConsoleLog.deleteAllLogMessages",
+    "when": "editorTextFocus && (neovim.mode == 'normal' || neovim.mode == 'visual')"
+  },
   // AI commmands for cursor
   {
     "key": "space a t",
@@ -332,5 +337,15 @@
     "key": "shift+cmd+j",
     "command": "-aiSettings.action.open",
     "when": "!isSettingsPaneOpen"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-expandLineSelection",
+    "when": "editorTextFocus"
   }
 ]

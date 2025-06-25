@@ -1,4 +1,41 @@
 {
+  // Layer3 / big repo settings
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/coverage": true,
+    // non-l3 excludes
+    "**/*.js.map": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/*?.js": {
+      "when": "$(basename).tsx"
+    }
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/dist/**": true,
+    "**/.next/**": true,
+    "**/coverage/**": true
+  },
+  "typescript.tsserver.maxTsServerMemory": 8192,
+  "typescript.tsserver.useSyntaxServer": "never",
+  "typescript.tsserver.watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriorityPolling"
+  },
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+
   // Editor Core Settings
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.accessibilitySupport": "off",
@@ -6,15 +43,13 @@
   "editor.autoIndent": "advanced",
   "editor.bracketPairColorization.enabled": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Liga SFMono Nerd Font,SF Mono,MonoLisa,DankMono-Bold, OperatorMonoLig-book,OperatorMonoSSMLig-book,FiraCode-retina, Operator Mono",
+  "editor.fontFamily": "Ligalex Mono,Liga SFMono Nerd Font,SF Mono,MonoLisa,DankMono-Bold, OperatorMonoLig-book,OperatorMonoSSMLig-book,FiraCode-retina, Operator Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14.47,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.enabled": true,
   "editor.lineHeight": 1.174,
-  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.selectionHighlight": false,
@@ -26,6 +61,8 @@
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
+  "editor.fontWeight": "500",
+  "editor.renderWhitespace": "trailing",
 
   // Quick Suggestions Configuration
   "editor.quickSuggestions": {
@@ -44,14 +81,19 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
   "[typescript]": {
-    "editor.autoClosingBrackets": "languageDefined"
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.autoClosingBrackets": "languageDefined"
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
     "editor.autoIndent": "advanced",
@@ -65,351 +107,11 @@
     "editor.tabSize": 2
   },
 
-  // Vim Configuration
-  "vim.leader": "<space>",
-  "vim.easymotion": true,
-  "vim.surround": true,
-  "vim.useSystemClipboard": true,
-  "vim.hlsearch": true,
-  "vim.visualstar": true,
-  "vim.smartRelativeLine": true,
-  "vim.sneakReplacesF": true,
-  "vim.camelCaseMotion.enable": true,
-  "vim.foldfix": true,
-  "vim.autoindent": true,
-  "vim.enableNeovim": true,
-  "vim.neovimPath": "/opt/homebrew/bin/nvim",
-  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
-  "vim.neovimUseConfigFile": true,
-  "vim.statusBarColorControl": false,
-
-  // Vim EasyMotion Styling
-  "vim.easymotionMarkerBackgroundColor": "black",
-  "vim.easymotionMarkerFontWeight": "bold",
-  "vim.easymotionMarkerForegroundColorOneChar": "lime",
-  "vim.easymotionMarkerForegroundColorTwoCharFirst": "violet",
-  "vim.easymotionMarkerForegroundColorTwoCharSecond": "orchid",
-
-  // Vim Key Handling
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-i>": true,
-    "<C-o>": true,
-    "<C-s>": false,
-    "<C-z>": false
-  },
-
-  // Vim Normal Mode Keybindings
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [":"],
-      "commands": ["workbench.action.showCommands"],
-      "silent": true
-    },
-    {
-      "before": ["esc"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["leader", "H"],
-      "commands": [
-        {
-          "args": [],
-          "command": "highlightwords.removeHighlight"
-        }
-      ]
-    },
-    {
-      "before": ["leader", "p", "d"],
-      "commands": [
-        {
-          "command": "editor.action.previewDeclaration"
-        }
-      ]
-    },
-    {
-      "before": ["leader", "t"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": ["leader", "g", "i"],
-      "commands": [
-        {
-          "command": "editor.action.peekImplementation"
-        }
-      ]
-    },
-    {
-      "before": ["leader", "g", "r"],
-      "commands": [
-        {
-          "command": "editor.action.referenceSearch.trigger"
-        }
-      ]
-    },
-    {
-      "before": ["leader", "d"],
-      "commands": [
-        {
-          "command": "workbench.action.closeActiveEditor"
-        }
-      ]
-    },
-    {
-      "after": ["leader", "leader", "2", "s"],
-      "before": ["s"]
-    },
-    {
-      "before": ["leader", "/"],
-      "commands": [
-        {
-          "command": "workbench.action.findInFiles"
-        }
-      ]
-    },
-    {
-      "before": ["leader", "c", "f"],
-      "commands": [
-        {
-          "command": "editor.action.formatDocument"
-        }
-      ]
-    },
-    {
-      "before": ["leader", "c", "r"],
-      "commands": [
-        {
-          "command": "editor.action.rename"
-        }
-      ]
-    },
-    {
-      "before": ["<right>"],
-      "commands": [
-        {
-          "args": [],
-          "command": "workbench.action.focusRightGroup"
-        }
-      ]
-    },
-    {
-      "before": ["<left>"],
-      "commands": [
-        {
-          "args": [],
-          "command": "workbench.action.focusLeftGroup"
-        }
-      ]
-    },
-    {
-      "before": ["J"],
-      "commands": [
-        {
-          "args": [],
-          "command": "indent-jump.moveDown"
-        }
-      ]
-    },
-    {
-      "before": ["leader", "c", "f"],
-      "commands": [
-        {
-          "command": "editor.action.formatDocument"
-        }
-      ]
-    },
-    {
-      "before": ["<space>", "b", "h"],
-      "commands": ["workbench.action.closeEditorsToTheLeft"]
-    },
-    {
-      "before": ["<space>", "b", "l"],
-      "commands": ["workbench.action.closeEditorsToTheRight"]
-    },
-    {
-      "before": ["<space>", "b", "o"],
-      "commands": ["workbench.action.closeOtherEditors"]
-    },
-    {
-      "before": ["<space>", "b", "w"],
-      "commands": ["workbench.action.closeAllEditors"]
-    },
-    {
-      "before": ["<space>", "e"],
-      "commands": ["workbench.view.explorer"]
-    },
-    {
-      "before": ["<space>", "d"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      "before": ["H"],
-      "commands": ["workbench.action.previousEditor"]
-    },
-    {
-      "before": ["L"],
-      "commands": ["workbench.action.nextEditor"]
-    },
-    {
-      "before": ["<space>", "t", "l"],
-      "commands": ["workbench.action.moveEditorToRightGroup"]
-    },
-    {
-      "before": ["<space>", "t", "h"],
-      "commands": ["workbench.action.moveEditorToLeftGroup"]
-    },
-    {
-      "before": ["<space>", "<space>"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    // Close all editors in current split/group
-    {
-      "before": ["<space>", "w", "d"],
-      "commands": ["workbench.action.closeEditorsInGroup"]
-    },
-    {
-      "before": ["<C-space>"],
-      "commands": [
-        {
-          "command": "editor.action.smartSelect.expand"
-        }
-      ]
-    },
-    {
-      "before": ["leader", "g", "g"],
-      "commands": [
-        {
-          "command": "workbench.view.scm"
-        }
-      ]
-    }
-  ],
-
-  // Vim Normal Mode Non-Recursive Keybindings
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["u"],
-      "commands": [
-        {
-          "command": "undo"
-        }
-      ]
-    },
-    {
-      "before": ["<C-r>"],
-      "commands": [
-        {
-          "command": "redo"
-        }
-      ]
-    },
-    {
-      "before": ["leader", ";"],
-      "commands": [
-        {
-          "command": "workbench.action.files.save"
-        }
-      ]
-    },
-    {
-      "before": ["<space>"],
-      "commands": ["whichkey.show"]
-    }
-  ],
-
-  // Vim Visual Mode Keybindings
-  "vim.visualModeKeyBindings": [
-    {
-      "before": [":"],
-      "commands": ["workbench.action.showCommands"],
-      "silent": true
-    },
-    {
-      "before": ["K"],
-      "commands": [
-        {
-          "args": [],
-          "command": "indent-jump.selectUp"
-        }
-      ]
-    },
-    {
-      "before": ["J"],
-      "commands": [
-        {
-          "args": [],
-          "command": "indent-jump.selectDown"
-        }
-      ]
-    },
-    {
-      "after": ["g", "_"],
-      "before": ["L"]
-    },
-    {
-      "after": ["^"],
-      "before": ["H"]
-    },
-    {
-      "before": ["<C-space>"],
-      "commands": [
-        {
-          "command": "editor.action.smartSelect.expand"
-        }
-      ]
-    }
-  ],
-
-  // Vim Visual Mode Non-Recursive Keybindings
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["leader", "h"],
-      "commands": [
-        {
-          "args": [],
-          "command": "highlightwords.addHighlight"
-        }
-      ]
-    },
-    {
-      "after": ["leader", "leader", "2", "s"],
-      "before": ["s"]
-    }
-  ],
-
-  // Vim Operator Pending Mode Keybindings
-  "vim.operatorPendingModeKeyBindings": [
-    {
-      "after": ["$"],
-      "before": ["L"]
-    },
-    {
-      "after": ["^"],
-      "before": ["H"]
-    }
-  ],
-
   // File Management
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "files.associations": {
     "*.css": "css"
-  },
-  "files.exclude": {
-    "**/*.js.map": true,
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/.hg": true,
-    "**/.svn": true,
-    "/dist": true,
-    "files.exclude": {
-      "**/*.js": {
-        "when": "$(basename).ts"
-      },
-      "**/*?.js": {
-        "when": "$(basename).tsx"
-      }
-    }
   },
 
   // Window Settings
@@ -422,16 +124,18 @@
 
   // Workbench Settings
   "workbench.colorTheme": "Catppuccin Macchiato",
-  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
   "workbench.list.defaultFindMode": "filter",
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
-  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredLightColorTheme": "Moonlight Italic",
+  "workbench.preferredLightColorTheme": "poimandres-storm",
+  "workbench.preferredHighContrastLightColorTheme": "Catppuccin Frappé",
+  "workbench.editor.wrapTabs": true,
 
   // Theme Customizations
   "workbench.colorCustomizations": {
@@ -470,7 +174,7 @@
     "*": false,
     "plaintext": true,
     "markdown": true,
-    // "scminput": false,
+    "scminput": false,
     "yaml": true
   },
   "prettier.singleQuote": true,
@@ -480,8 +184,12 @@
     "Backlinked",
     "backlinking",
     "backlinks",
-    "neovim"
+    "clsxm",
+    "neovim",
+    "SOLANA",
+    "trpc"
   ],
+  "cSpell.enableFiletypes": ["!json"],
   "emmet.showExpandedAbbreviation": "never",
   "eslint.alwaysShowStatus": true,
   "eslint.format.enable": true,
@@ -495,15 +203,23 @@
     "Q_NEW_SESSION": "1"
   },
   "terminal.integrated.fontFamily": "Roboto Mono Light for Powerline",
+  "terminal.integrated.defaultProfile.osx": "fish",
 
   // Misc Settings
   "ActiveFileInStatusBar.fullpath": false,
   "breadcrumbs.enabled": true,
   "security.workspace.trust.untrustedFiles": "open",
+  "security.promptForLocalFileProtocolHandling": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "extensions.ignoreRecommendations": true,
   "git.mergeEditor": false,
+  "git.autofetch": true,
+
+  // Neovim Configuration
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
 
   // Tailwind CSS
   "tailwindCSS.includeLanguages": {
@@ -533,10 +249,35 @@
     "showSearch": [
       "workbench.view.search",
       "workbench.action.focusActiveEditorGroup"
+    ],
+    "focusCursorNewChat": [
+      "workbench.action.focusAuxiliaryBar",
+      "aichat.newchataction"
     ]
   },
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "editor.fontWeight": "600",
-  "astro.updateImportsOnFileMove.enabled": true
+  "astro.updateImportsOnFileMove.enabled": true,
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "task.allowAutomaticTasks": "off",
+  "lldb.suppressUpdateNotifications": true,
+  "mcp": {
+    "servers": {
+      "context7": {
+        "command": "npx",
+        "args": ["-y", "@upstash/context7-mcp@latest"]
+      }
+    }
+  },
+  "workbench.activityBar.location": "top",
+  "editor.fontSize": 12.47,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.codesearch.enabled": true
 }

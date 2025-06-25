@@ -360,5 +360,18 @@
     "key": "shift+cmd+g",
     "command": "-workbench.action.terminal.openDetectedLink",
     "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "cmd+h",
+    "command": "-editor.action.simpleInlineDiffs.rejectAll",
+    "when": "editorTextFocus && hasDisplayedSimpleDiff"
+  },
+  {
+    "key": "cmd+h",
+    "command": "vscode-augment.focusAugmentPanel"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-vscode-augment.focusAugmentPanel"
   }
 ]

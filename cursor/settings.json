@@ -81,10 +81,12 @@
     "editor.defaultFormatter": "jock.svg"
   },
   "[typescript]": {
-    "editor.autoClosingBrackets": "languageDefined"
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.autoClosingBrackets": "languageDefined"
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[yaml]": {
     "editor.autoIndent": "advanced",
@@ -258,5 +260,16 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "workbench.preferredHighContrastLightColorTheme": "Catppuccin Frappé",
   "editor.renderWhitespace": "trailing",
-  "security.promptForLocalFileProtocolHandling": false
+  "security.promptForLocalFileProtocolHandling": false,
+  "lldb.suppressUpdateNotifications": true,
+  "workbench.editor.wrapTabs": true,
+  "task.allowAutomaticTasks": "off",
+  "cursor.composer.textSizeScale": 1.15,
+  "terminal.integrated.fontSize": 13,
+  "git.autofetch": true,
+  "[clojure]": {
+    "editor.defaultFormatter": "betterthantomorrow.calva"
+  },
+  "augment.nextEdit.enableBackgroundSuggestions": false,
+  "augment.nextEdit.enableAutoApply": false
 }
