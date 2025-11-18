@@ -1,0 +1,113 @@
+;; defsrc is still necessary
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+(defsrc
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  caps a s d f g h j k l ;
+  tab bksl lmet rmet
+  fn
+  b c e i m n o p q r t u v w x y z , .
+)
+(defvar
+  tap-time 150
+  hold-time 200
+)
+
+
+(defalias
+  ;; Shared hold action: keep Ctrl down and enable nav layer
+  ctrl-nav (multi lctl (layer-while-held nav))
+  rctrl-nav (multi rctl (layer-while-held nav))
+
+  ;; Caps lock: tap for esc, hold for ctrl AND activate nav layer
+  escctrl (tap-hold $tap-time $hold-time esc @ctrl-nav)
+
+  ;; Home row mods
+  a (tap-hold $tap-time $hold-time a lmet)
+  s (tap-hold $tap-time $hold-time s lalt)
+  d (tap-hold $tap-time $hold-time d lsft)
+  f (tap-hold $tap-time $hold-time f @ctrl-nav)
+
+  ;; In base layer, these are normal home row mods
+  h h
+  j (tap-hold $tap-time $hold-time j @rctrl-nav)
+  k (tap-hold $tap-time $hold-time k rsft)
+  l (tap-hold $tap-time $hold-time l ralt)
+  ; (tap-hold $tap-time $hold-time ; rmet)
+
+  ;; Tab: tap for tab, hold for hyper (shift+ctrl+alt+cmd)
+  hypertab (tap-hold 120 150 tab (multi lsft lctl lalt lmet))
+
+  ;; Backslash: tap for backslash, hold for hyper
+  hyperbslash (tap-hold 120 150 bksl (multi lsft lctl lalt lmet))
+
+  ;; M: tap for m, hold for hyper
+  hyperm (tap-hold $tap-time $hold-time m (multi lsft lctl lalt lmet))
+
+  ;; C: tap for c, hold for hyper
+  hyperc (tap-hold $tap-time $hold-time c (multi lsft lctl lalt lmet))
+
+  ;; Left cmd: tap for esc, hold for cmd
+  lmetesc (tap-hold 100 100 esc lmet)
+
+  ;; Right cmd: tap for esc, hold for cmd
+  rmetesc (tap-hold 100 100 esc rmet)
+
+  ;; Fn layer toggle
+  fnl (tap-hold $hold-time $hold-time fn (layer-toggle fn))
+
+  ;; Navigation helpers: temporarily drop Ctrl so arrows stay per-character
+  nav-left (unmod (lctl rctl) left)
+  nav-down (unmod (lctl rctl) down)
+  nav-up   (unmod (lctl rctl) up)
+  nav-right (unmod (lctl rctl) rght)
+
+  nav-bracket-left (unmod (lctl rctl) [)
+  nav-bracket-right (unmod (lctl rctl) ])
+
+  ;; Word motions while holding any Ctrl source (Caps/F/J)
+  nav-word-back (multi lalt @nav-left)
+  nav-word-forward (multi lalt @nav-right)
+
+  ;; Tab navigation (Cmd+Shift+[ / ])
+  nav-tab-prev (multi lmet lsft @nav-bracket-left)
+  nav-tab-next (multi lmet lsft @nav-bracket-right)
+)
+
+(defchordsv2
+  (w e) esc 50 all-released ()
+  (i o) (multi lalt bspc) 50 all-released ()
+  (x c) tab 50 all-released ()
+  (, .) ret 50 all-released ()
+  (m ,) (multi (multi lsft lctl lalt lmet) spc) 50 all-released ()
+)
+
+(deflayer base
+  brdn  brup  _    _    _    _   prev  pp  next  mute  vold  volu
+  @escctrl @a @s @d @f g @h @j @k @l @;
+  @hypertab @hyperbslash @lmetesc @rmetesc
+  @fnl
+  b @hyperc e i @hyperm n o p q r t u v w x y z , .
+)
+
+(deflayer fn
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  @escctrl _ _ _ _ _ _ _ _ _ _
+  _    _    _    _
+  fn
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+)
+
+;; Navigation layer - activated when holding Caps Lock, F, or J
+;; Only changes HJKL to arrows, everything else is transparent
+;; Ctrl modifier comes from whichever Ctrl source triggered the layer
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    @nav-left @nav-down @nav-up @nav-right _
+  _    _    _    _
+  _
+  @nav-word-back _ _ _ _ _ _ _ _ _ _ _ _ @nav-word-forward _ _ _ @nav-tab-prev @nav-tab-next
+)

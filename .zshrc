@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Add Homebrew to PATH early (needed for starship and other tools)
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Add pnpm global bin directory to PATH
 export PATH="/Users/ddaniel/Library/pnpm:$PATH"
@@ -13,14 +15,16 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git nvm)
 
 source $ZSH/oh-my-zsh.sh
+
+# Initialize Starship prompt
+eval "$(starship init zsh)"
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
 
 # --- Environment Variables ---
-export PATH="/opt/homebrew/bin:$PATH"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -47,6 +51,7 @@ alias cdm='cd ~/code/metta'
 alias cdms='cd ~/code/metta/extension/mettatate/mettatate-sidepanel/'
 alias cdl='cd ~/dev/l3/'
 alias cdll='cd ~/dev/l3/layer3/'
+alias cdi='cd ~/dev/l3/illa'
 alias cdk='cd ~/code/kaizen/kaizen-mobile'
 alias cdmt='cd ~/code/metta/mettatron'
 alias cpwd='pwd | tr -d "\n" | pbcopy'
@@ -87,23 +92,36 @@ alias y='yarn'
 alias yz='yazi'
 alias p='pnpm'
 alias n='npm'
-alias nr='npm run'
+alias b='bun'
+# alias nr='npm run'
+alias br='bun run'
 alias nv='nvim'
 alias lg='lazygit'
 alias com='git commit -m'
-alias comc='git commit -m "chore:"
-alias comfe='git commit -m "feat:"
-alias comfi='git commit -m "fix:"
-alias comd='git commit -m "docs:"
-alias comp='git commit -m "perf:"
-alias comr='git commit -m "refactor:"
 alias gc='git checkout'
 alias gcb='git checkout -b'
 alias gbd='git branch -D'
 alias gm='git merge'
 alias ga='git add'
 alias gfo='git fetch origin --prune'
+alias shadd="pnpm dlx shadcn@latest add"
+
+# Start kanata
+alias kb="sudo kanata -c ~/dotfiles/kanata/kanata.kbd"
 
 
 antidote load
-alias claude="/Users/ddaniel/.claude/local/claude"
+
+# bun completions
+[ -s "/Users/ddaniel/.bun/_bun" ] && source "/Users/ddaniel/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# alias claude="/Users/ddaniel/.claude/local/claude claude"
+alias clauto="claude --dangerously-skip-permissions"
