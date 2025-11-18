@@ -45,7 +45,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Ligalex Mono,Liga SFMono Nerd Font,SF Mono,MonoLisa,DankMono-Bold, OperatorMonoLig-book,OperatorMonoSSMLig-book,FiraCode-retina, Operator Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14.47,
+  "editor.fontSize": 12.47,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
@@ -86,7 +86,7 @@
   },
   "[typescriptreact]": {
     "editor.autoClosingBrackets": "languageDefined",
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
     "editor.autoIndent": "advanced",
@@ -116,6 +116,9 @@
   "window.commandCenter": false,
 
   // Workbench Settings
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
   "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.statusBar.visible": true,
@@ -125,7 +128,6 @@
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredLightColorTheme": "Catppuccin Frappé",
 
   // Theme Customizations
   "workbench.colorCustomizations": {
@@ -257,19 +259,27 @@
     "git diff",
     "git show"
   ],
-  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "workbench.preferredHighContrastLightColorTheme": "Catppuccin Frappé",
   "editor.renderWhitespace": "trailing",
   "security.promptForLocalFileProtocolHandling": false,
   "lldb.suppressUpdateNotifications": true,
   "workbench.editor.wrapTabs": true,
   "task.allowAutomaticTasks": "off",
-  "cursor.composer.textSizeScale": 1.15,
   "terminal.integrated.fontSize": 13,
   "git.autofetch": true,
   "[clojure]": {
     "editor.defaultFormatter": "betterthantomorrow.calva"
   },
   "augment.nextEdit.enableBackgroundSuggestions": false,
-  "augment.nextEdit.enableAutoApply": false
+  "augment.nextEdit.enableAutoApply": false,
+  "csv-preview.resizeColumns": "first",
+  "rainbow_csv.virtual_alignment_mode": "always",
+  "rainbow_csv.virtual_alignment_char": "space",
+  "[csv]": {
+    "editor.inlayHints.maximumLength": 0
+  },
+  "augment.chat.userGuidelines": "- only console.log relevant information, avoid when possible\n- when writing functions with more than two arguments, always use an object for the",
+  "workbench.preferredLightColorTheme": "Catppuccin Frappé",
+  "coderabbit.agentType": "Clipboard"
 }

@@ -3,7 +3,7 @@
   "files.exclude": {
     "**/node_modules": true,
     "**/.next": true,
-    "**/dist": true,
+    // "**/dist": true,
     "**/coverage": true,
     // non-l3 excludes
     "**/*.js.map": true,
@@ -124,16 +124,16 @@
 
   // Workbench Settings
   "workbench.colorTheme": "Catppuccin Macchiato",
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.iconTheme": "catppuccin-frappe",
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
   "workbench.list.defaultFindMode": "filter",
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
-  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "workbench.preferredDarkColorTheme": "poimandres",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredLightColorTheme": "poimandres-storm",
+  "workbench.preferredLightColorTheme": "Atom Material Theme",
   "workbench.preferredHighContrastLightColorTheme": "Catppuccin Frappé",
   "workbench.editor.wrapTabs": true,
 
@@ -175,7 +175,9 @@
     "plaintext": true,
     "markdown": true,
     "scminput": false,
-    "yaml": true
+    "yaml": true,
+    "typescript": false,
+    "typescriptreact": true
   },
   "prettier.singleQuote": true,
   "cSpell.enabled": true,
@@ -203,7 +205,7 @@
     "Q_NEW_SESSION": "1"
   },
   "terminal.integrated.fontFamily": "Roboto Mono Light for Powerline",
-  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.defaultProfile.osx": "zsh",
 
   // Misc Settings
   "ActiveFileInStatusBar.fullpath": false,
@@ -268,16 +270,16 @@
   ],
   "task.allowAutomaticTasks": "off",
   "lldb.suppressUpdateNotifications": true,
-  "mcp": {
-    "servers": {
-      "context7": {
-        "command": "npx",
-        "args": ["-y", "@upstash/context7-mcp@latest"]
-      }
-    }
-  },
   "workbench.activityBar.location": "top",
   "editor.fontSize": 12.47,
   "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.chat.codesearch.enabled": true
+  "github.copilot.chat.codesearch.enabled": true,
+  "rainbow_csv.virtual_alignment_mode": "always",
+  "[csv]": {
+    "editor.inlayHints.maximumLength": 0
+  },
+  "rainbow_csv.virtual_alignment_char": "space",
+  "chat.tools.terminal.autoApprove": {
+    "pnpm": true
+  }
 }

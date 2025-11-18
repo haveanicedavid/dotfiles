@@ -8,10 +8,26 @@ return {
   },
   opts = {
     hide_root_node = true,
+    filesystem = {
+      filtered_items = {
+        visible = false,
+        hide_dotfiles = false,
+        hide_gitignored = false,
+      },
+    },
     window = {
       mappings = {
         ["l"] = "open",
-        ["h"] = "close_node",
+        ["h"] = function(state)
+          local node = state.tree:get_node()
+          if node.type == "directory" and node:is_expanded() then
+            require("neo-tree.sources.filesystem").toggle_directory(state, node)
+          else
+            require("neo-tree.ui.renderer").focus_node(state, node:get_parent_id())
+          end
+        end,
+        ["H"] = "toggle_hidden",
+        ["gh"] = "toggle_hidden",
         ["P"] = {
           "toggle_preview",
           config = { use_float = true, use_image_nvim = true },
