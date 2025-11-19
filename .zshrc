@@ -125,3 +125,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # alias claude="/Users/ddaniel/.claude/local/claude claude"
 alias clauto="claude --dangerously-skip-permissions"
+
+# Added by Antigravity
+export PATH="/Users/ddaniel/.antigravity/antigravity/bin:$PATH"

@@ -6,14 +6,14 @@
 
 (defsrc
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
-  caps a s d f g h j k l ;
+  caps a s d f g h j k l ; '
   tab bksl lmet rmet
   fn
   b c e i m n o p q r t u v w x y z , .
 )
 (defvar
-  tap-time 150
-  hold-time 200
+  tap-time 147
+  hold-time 174
 )
 
 
@@ -27,7 +27,7 @@
 
   ;; Home row mods
   a (tap-hold $tap-time $hold-time a lmet)
-  s (tap-hold $tap-time $hold-time s lalt)
+  s (tap-hold $tap-time $hold-time s (multi lalt (layer-while-held s-layer)))
   d (tap-hold $tap-time $hold-time d lsft)
   f (tap-hold $tap-time $hold-time f @ctrl-nav)
 
@@ -39,10 +39,10 @@
   ; (tap-hold $tap-time $hold-time ; rmet)
 
   ;; Tab: tap for tab, hold for hyper (shift+ctrl+alt+cmd)
-  hypertab (tap-hold 120 150 tab (multi lsft lctl lalt lmet))
+  hypertab (tap-hold 117 147 tab (multi lsft lctl lalt lmet))
 
   ;; Backslash: tap for backslash, hold for hyper
-  hyperbslash (tap-hold 120 150 bksl (multi lsft lctl lalt lmet))
+  hyperbslash (tap-hold 117 147 bksl (multi lsft lctl lalt lmet))
 
   ;; M: tap for m, hold for hyper
   hyperm (tap-hold $tap-time $hold-time m (multi lsft lctl lalt lmet))
@@ -75,19 +75,24 @@
   ;; Tab navigation (Cmd+Shift+[ / ])
   nav-tab-prev (multi lmet lsft @nav-bracket-left)
   nav-tab-next (multi lmet lsft @nav-bracket-right)
+
+  ;; Hyper+Space / Hyper
+  hyperspc (tap-hold $tap-time $hold-time (multi lsft lctl lalt lmet spc) (multi lsft lctl lalt lmet))
 )
 
 (defchordsv2
-  (w e) esc 50 all-released ()
-  (i o) (multi lalt bspc) 50 all-released ()
-  (x c) tab 50 all-released ()
-  (, .) ret 50 all-released ()
-  (m ,) (multi (multi lsft lctl lalt lmet) spc) 50 all-released ()
+  (w e) esc 47 all-released ()
+  (i o) (multi lalt bspc) 47 all-released ()
+  (u i) bspc 47 all-released ()
+  (x c) tab 47 all-released ()
+  (, .) ret 47 all-released ()
+  (m ,) (multi (multi lsft lctl lalt lmet) spc) 47 all-released ()
+  (d k) caps 47 all-released ()
 )
 
 (deflayer base
-  brdn  brup  _    _    _    _   prev  pp  next  mute  vold  volu
-  @escctrl @a @s @d @f g @h @j @k @l @;
+  brdn  brup  _    _    _    _   prev  pp  next  mute  (multi ralt bspc)  @hyperspc
+  @escctrl @a @s @d @f g @h @j @k @l @; '
   @hypertab @hyperbslash @lmetesc @rmetesc
   @fnl
   b @hyperc e i @hyperm n o p q r t u v w x y z , .
@@ -95,7 +100,7 @@
 
 (deflayer fn
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
-  @escctrl _ _ _ _ _ _ _ _ _ _
+  @escctrl _ _ _ _ _ _ _ _ _ _ _
   _    _    _    _
   fn
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -106,8 +111,16 @@
 ;; Ctrl modifier comes from whichever Ctrl source triggered the layer
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    @nav-left @nav-down @nav-up @nav-right _
+  _    _    _    _    _    _    @nav-left @nav-down @nav-up @nav-right _ _
   _    _    _    _
   _
   @nav-word-back _ _ _ _ _ _ _ _ _ _ _ _ @nav-word-forward _ _ _ @nav-tab-prev @nav-tab-next
+)
+
+(deflayer s-layer
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    (unmod (lalt) grv)
+  _    _    _    _
+  _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 )
