@@ -19,6 +19,41 @@ plugins=(git nvm)
 
 source $ZSH/oh-my-zsh.sh
 
+# ---- NVM AUTO-SWITCHING ---- #
+
+export NVM_DIR="$HOME/.nvm"
+
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+    local requested_version="$(cat "${nvmrc_path}")"
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      echo "\033[1;33m📦 Installing Node.js v${requested_version}...\033[0m"
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      echo "\033[1;32m🔄 Switching to Node.js v${requested_version}\033[0m"
+      nvm use
+      echo "\033[1;36m✓ Now using $(node -v) (npm v$(npm -v))\033[0m"
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "\033[1;35m↩️ Reverting to default Node version\033[0m"
+    nvm use default
+    echo "\033[1;36m✓ Now using $(node -v)\033[0m"
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# ---- end NVM AUTO-SWITCHING ---- #
+
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
@@ -118,10 +153,6 @@ antidote load
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # alias claude="/Users/ddaniel/.claude/local/claude claude"
 alias clauto="claude --dangerously-skip-permissions"
