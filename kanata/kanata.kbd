@@ -81,12 +81,12 @@
 )
 
 (defchordsv2
-  (w e) esc 47 all-released ()
-  (i o) (multi lalt bspc) 47 all-released ()
-  (u i) bspc 47 all-released ()
-  (x c) tab 47 all-released ()
-  (, .) ret 47 all-released ()
-  (m ,) (multi (multi lsft lctl lalt lmet) spc) 47 all-released ()
+  ;; (w e) esc 47 all-released ()
+  ;; (i o) (macro A-bspc) 47 all-released ()
+  ;; (u i) bspc 47 all-released ()
+  ;; (x c) tab 47 all-released ()
+  ;; (, .) ret 47 all-released ()
+  (m ,) (macro M-C-A-S-(spc)) 47 all-released ()
   (d k) caps 47 all-released ()
 )
 
