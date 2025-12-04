@@ -1,28 +1,13 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
-# Add Homebrew to PATH early (needed for starship and other tools)
+# --- PATH Setup ---
 export PATH="/opt/homebrew/bin:$PATH"
 
-# Add pnpm global bin directory to PATH
-export PATH="/Users/ddaniel/Library/pnpm:$PATH"
-# Path to your Oh My Zsh installation.
+# --- Oh My Zsh ---
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-
 plugins=(git nvm)
-
 source $ZSH/oh-my-zsh.sh
 
-# ---- NVM AUTO-SWITCHING ---- #
-
+# --- NVM Auto-Switching ---
 export NVM_DIR="$HOME/.nvm"
-
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 
 autoload -U add-zsh-hook
@@ -52,19 +37,15 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# ---- end NVM AUTO-SWITCHING ---- #
-
-# Initialize Starship prompt
+# --- Prompt & Plugins ---
 eval "$(starship init zsh)"
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-
 
 # --- Environment Variables ---
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PNPM_HOME="$HOME/Library/pnpm"
 export BUN_INSTALL="$HOME/.bun"
-# export PATH="$PATH:$GOROOT/bin:$GOPATH/bin:$PNPM_HOME:$BUN_INSTALL/bin:/Applications/Postgres.app/Contents/Versions/latest/bin"
 
 # --- Aliases ---
 # Terminal themes
@@ -147,15 +128,7 @@ alias kb="sudo kanata -c ~/dotfiles/kanata/kanata.kbd"
 
 antidote load
 
-# bun completions
 [ -s "/Users/ddaniel/.bun/_bun" ] && source "/Users/ddaniel/.bun/_bun"
+export PATH="$BUN_INSTALL/bin:$PNPM_HOME:$HOME/.antigravity/antigravity/bin:$PATH"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# alias claude="/Users/ddaniel/.claude/local/claude claude"
 alias clauto="claude --dangerously-skip-permissions"
-
-# Added by Antigravity
-export PATH="/Users/ddaniel/.antigravity/antigravity/bin:$PATH"
