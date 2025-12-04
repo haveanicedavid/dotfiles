@@ -5,7 +5,7 @@
 )
 
 (defsrc
-  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12   f13
   caps a s d f g h j k l ; '
   tab bksl lmet rmet
   fn
@@ -44,8 +44,8 @@
   ;; Backslash: tap for backslash, hold for hyper
   hyperbslash (tap-hold 117 147 bksl (multi lsft lctl lalt lmet))
 
-  ;; M: tap for m, hold for hyper
-  hyperm (tap-hold $tap-time $hold-time m (multi lsft lctl lalt lmet))
+  ;; Comma: tap for comma, hold for hyper
+  hypercomma (tap-hold $tap-time $hold-time , (multi lsft lctl lalt lmet))
 
   ;; C: tap for c, hold for hyper
   hyperc (tap-hold $tap-time $hold-time c (multi lsft lctl lalt lmet))
@@ -85,21 +85,21 @@
   ;; (i o) (macro A-bspc) 47 all-released ()
   ;; (u i) bspc 47 all-released ()
   ;; (x c) tab 47 all-released ()
-  ;; (, .) ret 47 all-released ()
+  (, .) ret 47 all-released ()
   (m ,) (macro M-C-A-S-(spc)) 47 all-released ()
   (d k) caps 47 all-released ()
 )
 
 (deflayer base
-  brdn  brup  _    _    _    _   prev  pp  next  mute  (multi ralt bspc)  @hyperspc
+  (multi lmet spc)  brup  _    _    _    _   prev  pp  next  mute  voldwn  volu  (multi lmet spc)
   @escctrl @a @s @d @f g @h @j @k @l @; '
   @hypertab @hyperbslash @lmetesc @rmetesc
   @fnl
-  b @hyperc e i @hyperm n o p q r t u v w x y z , .
+  b @hyperc e i m n o p q r t u v w x y z @hypercomma .
 )
 
 (deflayer fn
-  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12   f13
   @escctrl _ _ _ _ _ _ _ _ _ _ _
   _    _    _    _
   fn
@@ -110,7 +110,7 @@
 ;; Only changes HJKL to arrows, everything else is transparent
 ;; Ctrl modifier comes from whichever Ctrl source triggered the layer
 (deflayer nav
-  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    @nav-left @nav-down @nav-up @nav-right _ _
   _    _    _    _
   _
@@ -118,7 +118,7 @@
 )
 
 (deflayer s-layer
-  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    (unmod (lalt) grv)
   _    _    _    _
   _

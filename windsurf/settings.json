@@ -227,5 +227,9 @@
     "editor.defaultFormatter": "Prisma.prisma"
   },
   "workbench.editor.wrapTabs": true,
-  "workbench.activityBar.location": "top"
+  "workbench.activityBar.location": "top",
+  "claudeCode.preferredLocation": "panel",
+  "coderabbit.agentType": "Clipboard",
+  "claudeCode.allowDangerouslySkipPermissions": true,
+  "claudeCode.useCtrlEnterToSend": true
 }

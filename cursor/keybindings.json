@@ -415,11 +415,6 @@
     "when": "!editorFocus"
   },
   {
-    "key": "shift+cmd+c",
-    "command": "copyRelativeFilePath",
-    "when": "editorFocus"
-  },
-  {
     "key": "cmd+r shift+alt+cmd+c",
     "command": "-copyRelativeFilePath",
     "when": "editorFocus"

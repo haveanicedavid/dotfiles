@@ -82,7 +82,7 @@
   },
   "[typescript]": {
     "editor.autoClosingBrackets": "languageDefined",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescriptreact]": {
     "editor.autoClosingBrackets": "languageDefined",
@@ -281,5 +281,7 @@
   },
   "augment.chat.userGuidelines": "- only console.log relevant information, avoid when possible\n- when writing functions with more than two arguments, always use an object for the",
   "workbench.preferredLightColorTheme": "Catppuccin Frappé",
-  "coderabbit.agentType": "Clipboard"
+  "coderabbit.agentType": "Clipboard",
+  "claudeCode.selectedModel": "default",
+  "claudeCode.preferredLocation": "panel"
 }
