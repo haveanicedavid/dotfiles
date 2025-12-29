@@ -10,6 +10,7 @@
   tab bksl lmet rmet
   fn
   b c e i m n o p q r t u v w x y z , .
+  f22 f23 f24
 )
 (defvar
   tap-time 147
@@ -78,6 +79,11 @@
 
   ;; Hyper+Space / Hyper
   hyperspc (tap-hold $tap-time $hold-time (multi lsft lctl lalt lmet spc) (multi lsft lctl lalt lmet))
+
+  ;; Function key macros
+  f22-action (multi lsft lctl lalt lmet spc)  ;; hyper + space
+  f23-action (multi lmet spc)                  ;; cmd + space
+  f24-action (multi lalt bspc)                 ;; alt + backspace (delete word)
 )
 
 (defchordsv2
@@ -96,6 +102,7 @@
   @hypertab @hyperbslash @lmetesc @rmetesc
   @fnl
   b @hyperc e i m n o p q r t u v w x y z @hypercomma .
+  @f22-action @f23-action @f24-action
 )
 
 (deflayer fn
@@ -104,6 +111,7 @@
   _    _    _    _
   fn
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _
 )
 
 ;; Navigation layer - activated when holding Caps Lock, F, or J
@@ -115,6 +123,7 @@
   _    _    _    _
   _
   @nav-word-back _ _ _ _ _ _ _ _ _ _ _ _ @nav-word-forward _ _ _ @nav-tab-prev @nav-tab-next
+  _ _ _
 )
 
 (deflayer s-layer
@@ -123,4 +132,5 @@
   _    _    _    _
   _
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _
 )
