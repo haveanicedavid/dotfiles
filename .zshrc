@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 # --- PATH Setup ---
 export PATH="/opt/homebrew/bin:$PATH"
 
@@ -40,6 +44,10 @@ load-nvmrc
 # --- Prompt & Plugins ---
 eval "$(starship init zsh)"
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+
+# --- Terminal Title (just folder path, no username) ---
+function set_title() { print -Pn "\e]0;%~\a" }
+add-zsh-hook precmd set_title
 
 # --- Environment Variables ---
 export GOPATH="$HOME/go"
@@ -132,3 +140,10 @@ antidote load
 export PATH="$BUN_INSTALL/bin:$PNPM_HOME:$HOME/.antigravity/antigravity/bin:$PATH"
 
 alias clauto="claude --dangerously-skip-permissions"
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+# Auto-enable Kiro inline suggestions in Ghostty
+[[ "$TERM_PROGRAM" = "ghostty" ]] && command -v kiro-cli &>/dev/null && kiro-cli inline enable &>/dev/null

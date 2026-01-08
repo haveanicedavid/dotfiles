@@ -86,7 +86,7 @@
   },
   "[typescriptreact]": {
     "editor.autoClosingBrackets": "languageDefined",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[yaml]": {
     "editor.autoIndent": "advanced",
@@ -104,7 +104,16 @@
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "files.associations": {
-    "*.css": "css"
+    "*.css": "css",
+    "*.toml": "toml",
+    "*.conf": "ini",
+    "aerospace.toml": "toml",
+    "stylua.toml": "toml",
+    "kanata.kbd": "plaintext",
+    "*.edn": "clojure",
+    "config.fish": "fish",
+    "**/ghostty/config": "properties",
+    "*.ghostty": "properties"
   },
 
   // Window Settings
@@ -199,9 +208,6 @@
   "ActiveFileInStatusBar.fullpath": false,
   "breadcrumbs.enabled": true,
   "security.workspace.trust.untrustedFiles": "open",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
   "cursor.cpp.disabledLanguages": ["scminput"],
   "git.mergeEditor": false,
 
@@ -271,6 +277,19 @@
   "[clojure]": {
     "editor.defaultFormatter": "betterthantomorrow.calva"
   },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "[ini]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[fish]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
   "augment.nextEdit.enableBackgroundSuggestions": false,
   "augment.nextEdit.enableAutoApply": false,
   "csv-preview.resizeColumns": "first",
@@ -283,5 +302,9 @@
   "workbench.preferredLightColorTheme": "Catppuccin Frappé",
   "coderabbit.agentType": "Clipboard",
   "claudeCode.selectedModel": "default",
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.initialPermissionMode": "acceptEdits",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
 }
