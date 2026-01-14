@@ -81,7 +81,7 @@
   hyperspc (tap-hold $tap-time $hold-time (multi lsft lctl lalt lmet spc) (multi lsft lctl lalt lmet))
 
   ;; Function key macros
-  f22-action (multi lsft lctl lalt lmet spc)  ;; hyper + space
+  f22-action (tap-hold $tap-time $hold-time (macro M-C-A-S-(spc)) (multi lsft lctl lalt lmet spc))  ;; hyper + space
   f23-action (multi lmet spc)                  ;; cmd + space
   f24-action (multi lalt bspc)                 ;; alt + backspace (delete word)
 )
