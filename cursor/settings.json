@@ -109,7 +109,7 @@
     "*.conf": "ini",
     "aerospace.toml": "toml",
     "stylua.toml": "toml",
-    "kanata.kbd": "plaintext",
+    "*.kbd": "kanata",
     "*.edn": "clojure",
     "config.fish": "fish",
     "**/ghostty/config": "properties",
@@ -303,5 +303,8 @@
   "coderabbit.agentType": "Clipboard",
   "claudeCode.selectedModel": "default",
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.initialPermissionMode": "acceptEdits"
+  "claudeCode.initialPermissionMode": "acceptEdits",
+  "[kanata]": {
+    "editor.defaultFormatter": "rszyma.vscode-kanata"
+  }
 }
