@@ -303,8 +303,5 @@
   "coderabbit.agentType": "Clipboard",
   "claudeCode.selectedModel": "default",
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.initialPermissionMode": "acceptEdits",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  }
+  "claudeCode.initialPermissionMode": "acceptEdits"
 }
