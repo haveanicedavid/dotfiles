@@ -2,6 +2,8 @@
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
+
+
 # --- PATH Setup ---
 export PATH="/opt/homebrew/bin:$PATH"
 
@@ -142,8 +144,10 @@ export PATH="$BUN_INSTALL/bin:$PNPM_HOME:$HOME/.antigravity/antigravity/bin:$PAT
 alias clauto="claude --dangerously-skip-permissions"
 
 
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
 
 # Auto-enable Kiro inline suggestions in Ghostty
 [[ "$TERM_PROGRAM" = "ghostty" ]] && command -v kiro-cli &>/dev/null && kiro-cli inline enable &>/dev/null
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

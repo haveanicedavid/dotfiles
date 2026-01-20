@@ -306,5 +306,8 @@
   "claudeCode.initialPermissionMode": "acceptEdits",
   "[kanata]": {
     "editor.defaultFormatter": "rszyma.vscode-kanata"
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
   }
 }

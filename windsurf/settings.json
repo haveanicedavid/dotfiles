@@ -30,27 +30,28 @@
   "editor.quickSuggestions": {
     "comments": false,
     "other": true,
-    "strings": true
+    "strings": true,
   },
 
   // Language-Specific Settings
   "[astro]": {
-    "editor.defaultFormatter": null
+    "editor.defaultFormatter": null,
   },
   "[clojure]": {
-    "editor.defaultFormatter": null
+    "editor.defaultFormatter": null,
   },
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
   },
   "[svg]": {
-    "editor.defaultFormatter": "jock.svg"
+    "editor.defaultFormatter": "jock.svg",
   },
   "[typescript]": {
-    "editor.autoClosingBrackets": "languageDefined"
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
   "[typescriptreact]": {
-    "editor.autoClosingBrackets": "languageDefined"
+    "editor.autoClosingBrackets": "languageDefined",
   },
   "[yaml]": {
     "editor.autoIndent": "advanced",
@@ -59,18 +60,18 @@
     "editor.quickSuggestions": {
       "comments": "on",
       "other": "on",
-      "strings": "on"
+      "strings": "on",
     },
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
   },
 
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "files.associations": {
-    "*.css": "css"
+    "*.css": "css",
   },
   "workbench.editorAssociations": {
-    "*.svg": "default"
+    "*.svg": "default",
   },
   "files.exclude": {
     "**/*.js.map": true,
@@ -81,12 +82,12 @@
     "/dist": true,
     "files.exclude": {
       "**/*.js": {
-        "when": "$(basename).ts"
+        "when": "$(basename).ts",
       },
       "**/*?.js": {
-        "when": "$(basename).tsx"
-      }
-    }
+        "when": "$(basename).tsx",
+      },
+    },
   },
 
   // Window Settings
@@ -112,22 +113,22 @@
   "workbench.colorCustomizations": {
     // "tab.activeBackground": "#000000",
     "[In Bed by 7pm]": {
-      "tab.unfocusedInactiveForeground": "#A3BDFC"
+      "tab.unfocusedInactiveForeground": "#A3BDFC",
     },
     "[Night Owl (No Italics)]": {
       "activityBar.background": "#000C1D",
       "activityBar.border": "#102a44",
       "sideBar.background": "#001122",
       "sideBar.border": "#102a44",
-      "sideBar.foreground": "#8BADC1"
+      "sideBar.foreground": "#8BADC1",
     },
     "[Night Owl]": {
       "activityBar.background": "#000C1D",
       "activityBar.border": "#102a44",
       "sideBar.background": "#001122",
       "sideBar.border": "#102a44",
-      "sideBar.foreground": "#8BADC1"
-    }
+      "sideBar.foreground": "#8BADC1",
+    },
   },
 
   // Language Support Settings
@@ -147,7 +148,7 @@
     "plaintext": true,
     "markdown": true,
     // "scminput": false,
-    "yaml": true
+    "yaml": true,
   },
   "prettier.singleQuote": true,
   "cSpell.enabled": true,
@@ -156,7 +157,7 @@
     "Backlinked",
     "backlinking",
     "backlinks",
-    "neovim"
+    "neovim",
   ],
   "emmet.showExpandedAbbreviation": "never",
   "eslint.alwaysShowStatus": true,
@@ -178,39 +179,39 @@
   "breadcrumbs.enabled": true,
   "security.workspace.trust.untrustedFiles": "open",
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
   "git.mergeEditor": false,
 
   // Tailwind CSS
   "tailwindCSS.includeLanguages": {
     "typescript": "javascript",
-    "typescriptreact": "javascript"
+    "typescriptreact": "javascript",
   },
 
   // Macros
   "macros": {
     "revealFileInTree": [
       "workbench.files.action.focusFilesExplorer",
-      "workbench.files.action.showActiveFileInExplorer"
+      "workbench.files.action.showActiveFileInExplorer",
     ],
     "revealOnlyFileInTree": [
       "workbench.files.action.focusFilesExplorer",
       "list.collapseAll",
-      "workbench.files.action.showActiveFileInExplorer"
+      "workbench.files.action.showActiveFileInExplorer",
     ],
     "showExplorer": [
       "workbench.view.explorer",
-      "workbench.action.focusActiveEditorGroup"
+      "workbench.action.focusActiveEditorGroup",
     ],
     "showGit": [
       "workbench.view.scm",
-      "workbench.action.focusActiveEditorGroup"
+      "workbench.action.focusActiveEditorGroup",
     ],
     "showSearch": [
       "workbench.view.search",
-      "workbench.action.focusActiveEditorGroup"
-    ]
+      "workbench.action.focusActiveEditorGroup",
+    ],
   },
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
@@ -224,12 +225,12 @@
   "editor.renderWhitespace": "trailing",
   "security.promptForLocalFileProtocolHandling": false,
   "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
+    "editor.defaultFormatter": "Prisma.prisma",
   },
   "workbench.editor.wrapTabs": true,
   "workbench.activityBar.location": "top",
   "claudeCode.preferredLocation": "panel",
   "coderabbit.agentType": "Clipboard",
   "claudeCode.allowDangerouslySkipPermissions": true,
-  "claudeCode.useCtrlEnterToSend": true
+  "claudeCode.useCtrlEnterToSend": true,
 }
