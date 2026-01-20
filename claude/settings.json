@@ -1,0 +1,115 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "additionalDirectories": [
+      ".worktrees/"
+    ],
+    "allow": [
+      "Edit(.worktrees/**)",
+      "Bash(pnpm:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(pnpm typecheck:*)",
+      "Bash(npx instant-cli@latest push schema)",
+      "Bash(npx instant-cli@latest push:*)",
+      "Bash(pnpm test:*)",
+      "Bash(npx vitest:*)",
+      "Bash(yes:*)",
+      "Bash(pnpm typecheck:watch:*)",
+      "Bash(pnpm test:coverage:*)",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__new_page",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__get_console_message",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__click",
+      "mcp__chrome-devtools__press_key",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__fill",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__wait_for",
+      "Bash(pnpm lint:*)",
+      "Bash(cat:*)",
+      "Bash(gh pr list:*)",
+      "WebSearch",
+      "WebFetch(domain:www.triplit.dev)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.powersync.com)",
+      "Bash(claude mcp list:*)",
+      "Bash(claude mcp remove --help:*)",
+      "Bash(claude mcp remove:*)",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "Bash(pnpm dev)",
+      "Bash(find:*)"
+    ],
+    "deny": [
+      "Bash(sudo rm:*)",
+      "Bash(rm -rf /:*)",
+      "Bash(rm -rf ~:*)",
+      "Bash(dd if=:*)",
+      "Bash(mkfs:*)",
+      "Bash(shutdown:*)",
+      "Bash(reboot:*)",
+      "Bash(:(){ :|:& };:)"
+    ],
+    "ask": [],
+    "defaultMode": "acceptEdits"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Command: $TOOL_INPUT.command. If command matches dangerous patterns (rm -rf, rm -r /, sudo rm, dd if=, mkfs, chmod 777, chown root, shutdown, reboot, kill -9, pkill, format, fdisk), return 'deny'. For rm commands outside project directories, return 'ask'. Otherwise 'approve'.",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$(osascript -e 'tell application \"System Events\" to set frontApp to name of first application process whose frontmost is true' 2>/dev/null)\" != \"Ghostty\" ] && terminal-notifier -message \"Claude Code Finished\" -sound default -activate com.mitchellh.ghostty"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "superpowers@superpowers-marketplace": true,
+    "code-review@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
+    "excludedCommands": [
+      "git",
+      "docker",
+      "pnpm",
+      "next",
+      "dotenvx",
+      "npx"
+    ],
+    "network": {
+      "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0"]
+    }
+  }
+}
