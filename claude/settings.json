@@ -54,8 +54,7 @@
       "Bash(dd if=:*)",
       "Bash(mkfs:*)",
       "Bash(shutdown:*)",
-      "Bash(reboot:*)",
-      "Bash(:(){ :|:& };:)"
+      "Bash(reboot:*)"
     ],
     "ask": [],
     "defaultMode": "acceptEdits"
