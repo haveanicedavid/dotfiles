@@ -60,18 +60,6 @@
     "defaultMode": "acceptEdits"
   },
   "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "Command: $TOOL_INPUT.command. If command matches dangerous patterns (rm -rf, rm -r /, sudo rm, dd if=, mkfs, chmod 777, chown root, shutdown, reboot, kill -9, pkill, format, fdisk), return 'deny'. For rm commands outside project directories, return 'ask'. Otherwise 'approve'.",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
     "Stop": [
       {
         "matcher": "",
@@ -106,9 +94,6 @@
       "next",
       "dotenvx",
       "npx"
-    ],
-    "network": {
-      "allowedHosts": ["localhost", "127.0.0.1", "0.0.0.0"]
-    }
+    ]
   }
 }

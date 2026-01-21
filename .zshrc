@@ -135,6 +135,25 @@ alias shadd="pnpm dlx shadcn@latest add"
 # Start kanata
 alias kb="sudo kanata -c ~/dotfiles/kanata/kanata.kbd"
 
+# --- Functions ---
+# Kill process(es) on specified port(s)
+# Usage: killport 3000 or killport 3000 3001 8080
+killport() {
+  for port in "$@"; do
+    local pid=$(lsof -ti:$port)
+    if [ -n "$pid" ]; then
+      local process=$(lsof -i:$port | tail -1 | awk '{print $1}')
+      kill -9 $pid && echo "Killed $process (PID $pid) on port $port"
+    else
+      echo "No process on port $port"
+    fi
+  done
+}
+
+# See what's running on a port
+# Usage: whosport 3000
+whosport() { lsof -i:$1 }
+
 
 antidote load
 
