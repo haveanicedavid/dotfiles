@@ -4,9 +4,6 @@
     "pr": ""
   },
   "permissions": {
-    "additionalDirectories": [
-      ".worktrees/"
-    ],
     "allow": [
       "Edit(.worktrees/**)",
       "Bash(pnpm:*)",
@@ -57,7 +54,10 @@
       "Bash(reboot:*)"
     ],
     "ask": [],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "acceptEdits",
+    "additionalDirectories": [
+      ".worktrees/"
+    ]
   },
   "hooks": {
     "Stop": [
@@ -87,13 +87,25 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": false,
+    "network": {
+      "allowLocalBinding": true,
+      "allowedDomains": [
+        "registry.npmjs.org",
+        "registry.yarnpkg.com",
+        "registry.npmmirror.com"
+      ]
+    },
     "excludedCommands": [
       "git",
       "docker",
       "pnpm",
+      "npm",
+      "npx",
+      "node",
       "next",
       "dotenvx",
-      "npx"
+      "yarn",
+      "bun"
     ]
   }
 }
