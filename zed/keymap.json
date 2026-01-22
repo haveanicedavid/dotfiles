@@ -1,0 +1,81 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-;": "workspace::ToggleBottomDock",
+      "ctrl-p": "command_palette::Toggle",
+      "ctrl-s": "workspace::Save",
+      "cmd-g": "workspace::ToggleLeftDock",
+      "alt-,": "pane::MoveItemLeft",
+      "alt-.": "pane::MoveItemRight",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "space space": "file_finder::Toggle",
+      "space d": "pane::CloseActiveItem",
+      "space e": "workspace::ToggleLeftDock",
+      "space b h": "pane::CloseItemsToTheLeft",
+      "space b l": "pane::CloseItemsToTheRight",
+      "space b o": "pane::CloseInactiveItems",
+      "space b w": "pane::CloseAllItems",
+      "space t h": "pane::SplitLeft",
+      "space t l": "pane::SplitRight",
+      "space w d": "pane::CloseAllItems",
+      "space c f": "editor::Format",
+      "space c r": "editor::Rename",
+      "space c a": "editor::ToggleCodeActions",
+      "space g g": "workspace::ToggleLeftDock",
+      "space g r": "editor::FindAllReferences",
+      "space g i": "editor::GoToImplementation",
+      "space p d": "editor::GoToDefinition",
+      "space /": "pane::DeploySearch",
+      "space x": "diagnostics::Deploy",
+      "space f e": "project_panel::RevealInProjectPanel",
+      "space a t": "workspace::ToggleRightDock",
+      "space a a": "assistant::OpenContext",
+      "space a n": "assistant::NewContext",
+      "left": "workspace::ActivatePaneLeft",
+      "right": "workspace::ActivatePaneRight",
+      "up": "workspace::ActivatePaneUp",
+      "down": "workspace::ActivatePaneDown",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space /": "pane::DeploySearch",
+      "space a c": "assistant::InsertIntoEditor",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-e": "project_panel::RevealInProjectPanel",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      ",": "project_panel::CollapseAllEntries",
+      "ctrl-c": "workspace::ActivatePreviousPane",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-cmd-[": "workspace::ActivatePreviousPane",
+      "shift-cmd-]": "workspace::ActivateNextPane",
+    },
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "down": "editor::ContextMenuNext",
+      "up": "editor::ContextMenuPrevious",
+    },
+  },
+]
