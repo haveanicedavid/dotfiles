@@ -12,11 +12,11 @@
     "**/.hg": true,
     "**/.svn": true,
     "**/*.js": {
-      "when": "$(basename).ts"
+      "when": "$(basename).ts",
     },
     "**/*?.js": {
-      "when": "$(basename).tsx"
-    }
+      "when": "$(basename).tsx",
+    },
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -24,14 +24,14 @@
     "**/node_modules/*/**": true,
     "**/dist/**": true,
     "**/.next/**": true,
-    "**/coverage/**": true
+    "**/coverage/**": true,
   },
   "typescript.tsserver.maxTsServerMemory": 8192,
   "typescript.tsserver.useSyntaxServer": "never",
   "typescript.tsserver.watchOptions": {
     "watchFile": "useFsEvents",
     "watchDirectory": "useFsEvents",
-    "fallbackPolling": "dynamicPriorityPolling"
+    "fallbackPolling": "dynamicPriorityPolling",
   },
   "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.tsserver.experimental.enableProjectDiagnostics": false,
@@ -67,26 +67,26 @@
   "editor.quickSuggestions": {
     "comments": false,
     "other": true,
-    "strings": true
+    "strings": true,
   },
 
   // Language-Specific Settings
   "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
+    "editor.defaultFormatter": "astro-build.astro-vscode",
   },
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
   },
   "[svg]": {
-    "editor.defaultFormatter": "jock.svg"
+    "editor.defaultFormatter": "jock.svg",
   },
   "[typescript]": {
     "editor.autoClosingBrackets": "languageDefined",
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
   "[typescriptreact]": {
     "editor.autoClosingBrackets": "languageDefined",
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
   "[yaml]": {
     "editor.autoIndent": "advanced",
@@ -95,9 +95,9 @@
     "editor.quickSuggestions": {
       "comments": "on",
       "other": "on",
-      "strings": "on"
+      "strings": "on",
     },
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
   },
 
   // File Management
@@ -113,7 +113,7 @@
     "*.edn": "clojure",
     "config.fish": "fish",
     "**/ghostty/config": "properties",
-    "*.ghostty": "properties"
+    "*.ghostty": "properties",
   },
 
   // Window Settings
@@ -126,7 +126,7 @@
 
   // Workbench Settings
   "workbench.editorAssociations": {
-    "*.svg": "default"
+    "*.svg": "default",
   },
   "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.iconTheme": "catppuccin-mocha",
@@ -141,22 +141,22 @@
   // Theme Customizations
   "workbench.colorCustomizations": {
     "[In Bed by 7pm]": {
-      "tab.unfocusedInactiveForeground": "#A3BDFC"
+      "tab.unfocusedInactiveForeground": "#A3BDFC",
     },
     "[Night Owl (No Italics)]": {
       "activityBar.background": "#000C1D",
       "activityBar.border": "#102a44",
       "sideBar.background": "#001122",
       "sideBar.border": "#102a44",
-      "sideBar.foreground": "#8BADC1"
+      "sideBar.foreground": "#8BADC1",
     },
     "[Night Owl]": {
       "activityBar.background": "#000C1D",
       "activityBar.border": "#102a44",
       "sideBar.background": "#001122",
       "sideBar.border": "#102a44",
-      "sideBar.foreground": "#8BADC1"
-    }
+      "sideBar.foreground": "#8BADC1",
+    },
   },
 
   // Language Support Settings
@@ -176,7 +176,7 @@
     "plaintext": true,
     "markdown": true,
     "scminput": false,
-    "yaml": true
+    "yaml": true,
   },
   "prettier.singleQuote": true,
   "cSpell.enabled": true,
@@ -188,7 +188,7 @@
     "clsxm",
     "neovim",
     "SOLANA",
-    "trpc"
+    "trpc",
   ],
   "emmet.showExpandedAbbreviation": "never",
   "eslint.alwaysShowStatus": true,
@@ -200,7 +200,7 @@
   // Terminal Settings
   "terminal.external.osxExec": "Kitty.app",
   "terminal.integrated.env.osx": {
-    "Q_NEW_SESSION": "1"
+    "Q_NEW_SESSION": "1",
   },
   "terminal.integrated.fontFamily": "Roboto Mono Light for Powerline",
 
@@ -214,36 +214,36 @@
   // Tailwind CSS
   "tailwindCSS.includeLanguages": {
     "typescript": "javascript",
-    "typescriptreact": "javascript"
+    "typescriptreact": "javascript",
   },
 
   // Macros
   "macros": {
     "revealFileInTree": [
       "workbench.files.action.focusFilesExplorer",
-      "workbench.files.action.showActiveFileInExplorer"
+      "workbench.files.action.showActiveFileInExplorer",
     ],
     "revealOnlyFileInTree": [
       "workbench.files.action.focusFilesExplorer",
       "list.collapseAll",
-      "workbench.files.action.showActiveFileInExplorer"
+      "workbench.files.action.showActiveFileInExplorer",
     ],
     "showExplorer": [
       "workbench.view.explorer",
-      "workbench.action.focusActiveEditorGroup"
+      "workbench.action.focusActiveEditorGroup",
     ],
     "showGit": [
       "workbench.view.scm",
-      "workbench.action.focusActiveEditorGroup"
+      "workbench.action.focusActiveEditorGroup",
     ],
     "showSearch": [
       "workbench.view.search",
-      "workbench.action.focusActiveEditorGroup"
+      "workbench.action.focusActiveEditorGroup",
     ],
     "focusCursorNewChat": [
       "workbench.action.focusAuxiliaryBar",
-      "aichat.newchataction"
-    ]
+      "aichat.newchataction",
+    ],
   },
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
@@ -255,7 +255,7 @@
   "cursor.composer.agentLoopOnLints": false,
   "extensions.ignoreRecommendations": true,
   "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
+    "editor.defaultFormatter": "Prisma.prisma",
   },
   "roo-cline.allowedCommands": [
     "npm test",
@@ -263,7 +263,7 @@
     "tsc",
     "git log",
     "git diff",
-    "git show"
+    "git show",
   ],
   "terminal.integrated.defaultProfile.osx": "zsh",
   "workbench.preferredHighContrastLightColorTheme": "Catppuccin Frappé",
@@ -275,20 +275,20 @@
   "terminal.integrated.fontSize": 13,
   "git.autofetch": true,
   "[clojure]": {
-    "editor.defaultFormatter": "betterthantomorrow.calva"
+    "editor.defaultFormatter": "betterthantomorrow.calva",
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml",
     "editor.formatOnSave": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
   },
   "[ini]": {
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "[fish]": {
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
   },
   "augment.nextEdit.enableBackgroundSuggestions": false,
   "augment.nextEdit.enableAutoApply": false,
@@ -296,7 +296,7 @@
   "rainbow_csv.virtual_alignment_mode": "always",
   "rainbow_csv.virtual_alignment_char": "space",
   "[csv]": {
-    "editor.inlayHints.maximumLength": 0
+    "editor.inlayHints.maximumLength": 0,
   },
   "augment.chat.userGuidelines": "- only console.log relevant information, avoid when possible\n- when writing functions with more than two arguments, always use an object for the",
   "workbench.preferredLightColorTheme": "Catppuccin Frappé",
@@ -305,6 +305,9 @@
   "claudeCode.preferredLocation": "panel",
   "claudeCode.initialPermissionMode": "acceptEdits",
   "[kanata]": {
-    "editor.defaultFormatter": "rszyma.vscode-kanata"
-  }
+    "editor.defaultFormatter": "rszyma.vscode-kanata",
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
+  },
 }
