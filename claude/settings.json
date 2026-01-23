@@ -40,7 +40,6 @@
       "Bash(claude mcp remove --help:*)",
       "Bash(claude mcp remove:*)",
       "Bash(lsof:*)",
-      "Bash(curl:*)",
       "Bash(pnpm dev)",
       "Bash(find:*)"
     ],
@@ -48,14 +47,42 @@
       "Bash(sudo rm:*)",
       "Bash(rm -rf /:*)",
       "Bash(rm -rf ~:*)",
+      "Bash(rm -rf /*:*)",
       "Bash(dd if=:*)",
       "Bash(mkfs:*)",
+      "Bash(fdisk:*)",
+      "Bash(diskutil eraseDisk:*)",
+      "Bash(diskutil partitionDisk:*)",
       "Bash(shutdown:*)",
-      "Bash(reboot:*)"
+      "Bash(reboot:*)",
+      "Bash(halt:*)",
+      "Bash(csrutil disable:*)",
+      "Bash(csrutil authenticated-root disable:*)",
+      "Bash(nvram -c:*)",
+      "Bash(chmod 777:*)",
+      "Bash(chmod -R 777:*)",
+      "Bash(launchctl bootout system:*)",
+      "Bash(killall Finder:*)",
+      "Bash(killall Dock:*)",
+      "Bash(killall SystemUIServer:*)",
+      "Bash(killall loginwindow:*)",
+      "Bash(git push --force origin main:*)",
+      "Bash(git push --force origin master:*)",
+      "Bash(git push -f origin main:*)",
+      "Bash(git push -f origin master:*)",
+      "Bash(curl * | sh:*)",
+      "Bash(curl * | bash:*)",
+      "Bash(curl * | zsh:*)",
+      "Bash(wget * | sh:*)",
+      "Bash(wget * | bash:*)"
     ],
-    "ask": [],
+    "ask": [
+      "Bash(curl:*)"
+    ],
     "defaultMode": "acceptEdits",
-    "additionalDirectories": [".worktrees/"]
+    "additionalDirectories": [
+      ".worktrees/"
+    ]
   },
   "hooks": {
     "Stop": [
@@ -105,5 +132,10 @@
       "yarn",
       "bun"
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0
   }
 }
