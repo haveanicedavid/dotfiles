@@ -140,10 +140,12 @@ alias kb="sudo kanata -c ~/dotfiles/kanata/kanata.kbd"
 # Usage: killport 3000 or killport 3000 3001 8080
 killport() {
   for port in "$@"; do
-    local pid=$(lsof -ti:$port)
-    if [ -n "$pid" ]; then
-      local process=$(lsof -i:$port | tail -1 | awk '{print $1}')
-      kill -9 $pid && echo "Killed $process (PID $pid) on port $port"
+    local pids=($(lsof -ti:$port))
+    if [ ${#pids[@]} -gt 0 ]; then
+      for pid in "${pids[@]}"; do
+        local process=$(ps -p $pid -o comm= 2>/dev/null || echo "unknown")
+        kill -9 $pid 2>/dev/null && echo "Killed $process (PID $pid) on port $port"
+      done
     else
       echo "No process on port $port"
     fi
