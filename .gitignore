@@ -3,3 +3,6 @@ nvim/lazy-lock.json
 
 .clj-kondo/
 .lsp
+
+# Claude Code task state (local only)
+claude/tasks/
