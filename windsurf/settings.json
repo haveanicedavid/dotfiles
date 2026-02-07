@@ -52,6 +52,7 @@
   },
   "[typescriptreact]": {
     "editor.autoClosingBrackets": "languageDefined",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
   "[yaml]": {
     "editor.autoIndent": "advanced",
@@ -105,9 +106,9 @@
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
-  "workbench.preferredDarkColorTheme": "Ilyat Poimandres Darker",
+  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.preferredHighContrastColorTheme": "GitHub Dark High Contrast",
-  "workbench.preferredLightColorTheme": "Ilyat Poimandres",
+  "workbench.preferredLightColorTheme": "Catppuccin Frappé",
 
   // Theme Customizations
   "workbench.colorCustomizations": {
@@ -170,7 +171,7 @@
   "terminal.external.osxExec": "Kitty.app",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.env.osx": {
-    "Q_NEW_SESSION": "1"
+    "Q_NEW_SESSION": "1",
   },
   "terminal.integrated.fontFamily": "Roboto Mono Light for Powerline",
 
@@ -221,7 +222,7 @@
   "extensions.ignoreRecommendations": true,
   "windsurf.autoExecutionPolicy": "off",
   "windsurf.explainAndFixInCurrentConversation": true,
-  "workbench.iconTheme": "catppuccin-frappe",
+  "workbench.iconTheme": "catppuccin-macchiato",
   "editor.renderWhitespace": "trailing",
   "security.promptForLocalFileProtocolHandling": false,
   "[prisma]": {

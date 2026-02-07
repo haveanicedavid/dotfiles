@@ -7,11 +7,11 @@
   "buffer_font_size": 13,
   "buffer_font_weight": 500,
   "buffer_line_height": {
-    "custom": 1.174
+    "custom": 1.174,
   },
   "buffer_font_features": {
     "calt": true,
-    "liga": true
+    "liga": true,
   },
 
   // UI font
@@ -22,7 +22,7 @@
   "theme": {
     "mode": "system",
     "light": "Catppuccin Frappé",
-    "dark": "Catppuccin Macchiato"
+    "dark": "Catppuccin Macchiato",
   },
 
   // Editor behavior
@@ -36,52 +36,52 @@
   // Auto-save on focus change (matching files.autoSave: onFocusChange)
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
 
   // Disable minimap (matching editor.minimap.enabled: false)
   "minimap": {
-    "show": "never"
+    "show": "never",
   },
 
   // Scrollbar settings
   "scrollbar": {
-    "show": "auto"
+    "show": "auto",
   },
 
   // Sticky scroll (matching editor.stickyScroll.enabled: true)
   "sticky_scroll": {
-    "enabled": true
+    "enabled": true,
   },
 
   // Bracket pair colorization
   "bracket_pair_colorization": {
-    "enabled": true
+    "enabled": true,
   },
 
   // Indent guides (matching editor.guides.bracketPairs: true)
   "indent_guides": {
     "enabled": true,
-    "coloring": "indent_aware"
+    "coloring": "indent_aware",
   },
 
   // Tab bar (matching window.density.editorTabHeight: compact)
   "tab_bar": {
     "show": true,
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
   },
   "tabs": {
     "close_position": "right",
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
   },
 
   // Toolbar
   "toolbar": {
     "breadcrumbs": true,
     "quick_actions": true,
-    "selections_menu": true
+    "selections_menu": true,
   },
 
   // File exclusions (matching your files.exclude)
@@ -94,29 +94,29 @@
     "**/dist",
     "**/coverage",
     "**/.DS_Store",
-    "**/*.js.map"
+    "**/*.js.map",
   ],
 
   // Git settings
   "git": {
     "git_gutter": "tracked_files",
     "inline_blame": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
 
   // Terminal (matching your terminal settings)
   "terminal": {
     "shell": {
-      "program": "zsh"
+      "program": "zsh",
     },
     "font_family": "Roboto Mono Light for Powerline",
     "font_size": 13,
     "line_height": {
-      "custom": 1.2
+      "custom": 1.2,
     },
     "blinking": "on",
-    "copy_on_select": false
+    "copy_on_select": false,
   },
 
   // Completions
@@ -127,7 +127,7 @@
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
-    "show_parameter_hints": true
+    "show_parameter_hints": true,
   },
 
   // Project panel (sidebar)
@@ -138,36 +138,31 @@
     "auto_reveal_entries": true,
     "auto_fold_dirs": false,
     "scrollbar": {
-      "show": "auto"
-    }
+      "show": "auto",
+    },
   },
 
   // Outline panel
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
 
   // Collaboration panel
   "collaboration_panel": {
-    "dock": "left"
-  },
-
-  // Chat panel
-  "chat_panel": {
-    "dock": "right"
+    "dock": "left",
   },
 
   // Assistant panel (AI)
   "agent": {
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-20250514"
-    }
+      "model": "claude-sonnet-4-20250514",
+    },
   },
 
   // Prettier formatting (matching your prettier settings)
   "prettier": {
-    "allowed": true
+    "allowed": true,
   },
 
   // Language-specific settings
@@ -175,46 +170,46 @@
     "TypeScript": {
       "tab_size": 2,
       "format_on_save": "on",
-      "formatter": "language_server"
+      "formatter": "language_server",
     },
     "TSX": {
       "tab_size": 2,
       "format_on_save": "on",
-      "formatter": "language_server"
+      "formatter": "language_server",
     },
     "JavaScript": {
       "tab_size": 2,
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "JSON": {
       "tab_size": 2,
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "YAML": {
       "tab_size": 2,
-      "format_on_save": "off"
+      "format_on_save": "off",
     },
     "Markdown": {
       "soft_wrap": "editor_width",
-      "format_on_save": "off"
+      "format_on_save": "off",
     },
     "CSS": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "TOML": {
       "tab_size": 2,
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
   },
 
   // Telemetry
   "telemetry": {
     "metrics": false,
-    "diagnostics": false
+    "diagnostics": false,
   },
 
   // Restore last session
-  "restore_on_startup": "last_session",
+  "restore_on_startup": "empty_tab",
 
   // Show whitespace (matching editor.renderWhitespace: trailing)
   "show_whitespaces": "selection",
@@ -223,11 +218,11 @@
   "preview_tabs": {
     "enabled": true,
     "enable_preview_from_file_finder": true,
-    "enable_keep_preview_on_code_navigation": true
+    "enable_keep_preview_on_code_navigation": true,
   },
 
   // Confirm quit
-  "confirm_quit": true,
+  "confirm_quit": false,
 
   // Current line highlight
   "current_line_highlight": "gutter",
@@ -243,7 +238,7 @@
     "line_numbers": true,
     "code_actions": true,
     "runnables": true,
-    "folds": true
+    "folds": true,
   },
 
   // Search
@@ -251,7 +246,7 @@
     "whole_word": false,
     "case_sensitive": false,
     "include_ignored": false,
-    "regex": false
+    "regex": false,
   },
 
   // File associations (matching your files.associations)
@@ -259,6 +254,6 @@
     "TOML": ["*.toml", "aerospace.toml", "stylua.toml"],
     "Clojure": ["*.edn"],
     "Fish": ["config.fish"],
-    "Plain Text": ["**/ghostty/config", "*.ghostty"]
-  }
+    "Plain Text": ["**/ghostty/config", "*.ghostty"],
+  },
 }

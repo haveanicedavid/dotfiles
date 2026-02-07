@@ -7,6 +7,8 @@ gtk-tabs-location = bottom
 shell-integration = detect
 shell-integration-features = no-title
 
+# Note: system bell is broken on macOS Ghostty (known issue)
+# Using title (🔔 prefix) and attention (dock bounce) instead
 bell-features = title,attention
 
 mouse-scroll-multiplier = 1

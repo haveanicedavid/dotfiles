@@ -6,9 +6,9 @@
       "ctrl-p": "command_palette::Toggle",
       "ctrl-s": "workspace::Save",
       "cmd-g": "workspace::ToggleLeftDock",
-      "alt-,": "pane::MoveItemLeft",
-      "alt-.": "pane::MoveItemRight",
-    },
+      "alt-,": "pane::SwapItemLeft",
+      "alt-.": "pane::SwapItemRight"
+    }
   },
   {
     "context": "Editor && vim_mode == normal",
@@ -20,7 +20,7 @@
       "space e": "workspace::ToggleLeftDock",
       "space b h": "pane::CloseItemsToTheLeft",
       "space b l": "pane::CloseItemsToTheRight",
-      "space b o": "pane::CloseInactiveItems",
+      "space b o": "pane::CloseOtherItems",
       "space b w": "pane::CloseAllItems",
       "space t h": "pane::SplitLeft",
       "space t l": "pane::SplitRight",
@@ -34,48 +34,66 @@
       "space p d": "editor::GoToDefinition",
       "space /": "pane::DeploySearch",
       "space x": "diagnostics::Deploy",
-      "space f e": "project_panel::RevealInProjectPanel",
+      "space f e": "pane::RevealInProjectPanel",
       "space a t": "workspace::ToggleRightDock",
-      "space a a": "assistant::OpenContext",
-      "space a n": "assistant::NewContext",
+      "space a a": "agent::ToggleAgentPane",
+      "space a n": "agent::NewThread",
       "left": "workspace::ActivatePaneLeft",
       "right": "workspace::ActivatePaneRight",
       "up": "workspace::ActivatePaneUp",
-      "down": "workspace::ActivatePaneDown",
-    },
+      "down": "workspace::ActivatePaneDown"
+    }
   },
   {
     "context": "Editor && vim_mode == visual",
     "bindings": {
       "space /": "pane::DeploySearch",
-      "space a c": "assistant::InsertIntoEditor",
-    },
+      "space a c": "assistant::InsertIntoEditor"
+    }
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-e": "project_panel::RevealInProjectPanel",
-    },
+      "ctrl-e": "pane::RevealInProjectPanel"
+    }
   },
   {
     "context": "ProjectPanel",
     "bindings": {
       ",": "project_panel::CollapseAllEntries",
-      "ctrl-c": "workspace::ActivatePreviousPane",
-    },
+      "ctrl-c": "workspace::ActivatePreviousPane"
+    }
   },
   {
     "context": "Terminal",
     "bindings": {
       "shift-cmd-[": "workspace::ActivatePreviousPane",
-      "shift-cmd-]": "workspace::ActivateNextPane",
-    },
+      "shift-cmd-]": "workspace::ActivateNextPane"
+    }
   },
   {
     "context": "Editor && showing_completions",
     "bindings": {
       "down": "editor::ContextMenuNext",
-      "up": "editor::ContextMenuPrevious",
-    },
+      "up": "editor::ContextMenuPrevious"
+    }
   },
+  {
+    "context": "!ContextEditor > (Editor && mode == full)",
+    "bindings": {
+      "ctrl-shift-e": "pane::RevealInProjectPanel"
+    }
+  },
+  {
+    "context": "ContextEditor > Editor",
+    "bindings": {
+      "cmd-shift-g": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-shift-g": null
+    }
+  }
 ]

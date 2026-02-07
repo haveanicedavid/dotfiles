@@ -4,6 +4,7 @@
 
 
 
+
 # --- PATH Setup ---
 export PATH="/opt/homebrew/bin:$PATH"
 
@@ -77,10 +78,12 @@ alias cdm='cd ~/code/metta'
 alias cdms='cd ~/code/metta/extension/mettatate/mettatate-sidepanel/'
 alias cdl='cd ~/dev/l3/'
 alias cdll='cd ~/dev/l3/layer3/'
+alias cdp='cd ~/code/portfolio/'
 alias cdi='cd ~/dev/l3/illa'
 alias cdk='cd ~/code/kaizen/kaizen-mobile'
 alias cdmt='cd ~/code/metta/mettatron'
 alias cpwd='pwd | tr -d "\n" | pbcopy'
+alias cds='cd ~/code/superconductor'
 
 # Applications
 alias c='cursor .'
@@ -115,10 +118,10 @@ alias hide-hidden='defaults write com.apple.finder AppleShowAllFiles -bool false
 # Use zsh-abbr or zsh-autosuggestions for true abbr-like behavior
 # Otherwise, use aliases for simple cases
 alias y='yarn'
-alias yz='yazi'
 alias p='pnpm'
 alias n='npm'
 alias b='bun'
+alias j='just'
 # alias nr='npm run'
 alias br='bun run'
 alias nv='nvim'
@@ -134,6 +137,9 @@ alias shadd="pnpm dlx shadcn@latest add"
 
 # Start kanata
 alias kb="sudo kanata -c ~/dotfiles/kanata/kanata.kbd"
+
+# Restart kiro-cli inline completions (legacy "fig" name)
+alias fig='kiro-cli inline disable &>/dev/null; kiro-cli inline enable && echo "Kiro inline restarted"'
 
 # --- Functions ---
 # Kill process(es) on specified port(s)
@@ -162,13 +168,12 @@ antidote load
 [ -s "/Users/ddaniel/.bun/_bun" ] && source "/Users/ddaniel/.bun/_bun"
 export PATH="$BUN_INSTALL/bin:$PNPM_HOME:$HOME/.antigravity/antigravity/bin:$PATH"
 
+alias cl='claude'
+alias clr='claude -r'
 alias clauto="claude --dangerously-skip-permissions"
 
 
-
-# Auto-enable Kiro inline suggestions in Ghostty
-[[ "$TERM_PROGRAM" = "ghostty" ]] && command -v kiro-cli &>/dev/null && kiro-cli inline enable &>/dev/null
-
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

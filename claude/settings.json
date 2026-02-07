@@ -77,7 +77,8 @@
       "Bash(wget * | bash:*)"
     ],
     "ask": [
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git:*)"
     ],
     "defaultMode": "acceptEdits",
     "additionalDirectories": [
@@ -85,40 +86,81 @@
     ]
   },
   "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.superconductor/hooks/notify.sh"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "[ \"$(osascript -e 'tell application \"System Events\" to set frontApp to name of first application process whose frontmost is true' 2>/dev/null)\" != \"Ghostty\" ] && terminal-notifier -message \"Claude Code Finished\" -sound default -activate com.mitchellh.ghostty"
+            "command": "~/.superconductor/hooks/notify.sh"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.superconductor/hooks/notify.sh"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/ddaniel/.superconductor/hooks/notify.sh"
           }
         ]
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0
+  },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
     "superpowers@superpowers-marketplace": true,
     "code-review@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
-    "security-guidance@claude-plugins-official": true
+    "security-guidance@claude-plugins-official": true,
+    "claude-notifications-go@claude-notifications-go": false,
+    "frontend-design@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "episodic-memory@superpowers-marketplace": true
   },
   "sandbox": {
     "enabled": false,
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": false,
     "network": {
-      "allowLocalBinding": true,
       "allowedDomains": [
         "registry.npmjs.org",
         "registry.yarnpkg.com",
         "registry.npmmirror.com"
-      ]
+      ],
+      "allowLocalBinding": true
     },
     "excludedCommands": [
       "git",
@@ -132,10 +174,5 @@
       "yarn",
       "bun"
     ]
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "bunx -y ccstatusline@latest",
-    "padding": 0
   }
 }
