@@ -1,6 +1,6 @@
 
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+# Kiro CLI pre block (disabled)
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
 
 
@@ -10,39 +10,12 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 # --- Oh My Zsh ---
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git nvm)
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# --- NVM Auto-Switching ---
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-
-autoload -U add-zsh-hook
-
-load-nvmrc() {
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-    local requested_version="$(cat "${nvmrc_path}")"
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      echo "\033[1;33m📦 Installing Node.js v${requested_version}...\033[0m"
-      nvm install
-    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-      echo "\033[1;32m🔄 Switching to Node.js v${requested_version}\033[0m"
-      nvm use
-      echo "\033[1;36m✓ Now using $(node -v) (npm v$(npm -v))\033[0m"
-    fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "\033[1;35m↩️ Reverting to default Node version\033[0m"
-    nvm use default
-    echo "\033[1;36m✓ Now using $(node -v)\033[0m"
-  fi
-}
-
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# --- fnm (Fast Node Manager) ---
+eval "$(fnm env --use-on-cd)"
+alias nvm='fnm'
 
 # --- Prompt & Plugins ---
 eval "$(starship init zsh)"
@@ -53,14 +26,22 @@ function set_title() { print -Pn "\e]0;%~\a" }
 add-zsh-hook precmd set_title
 
 # --- Environment Variables ---
+# Claude Code: use system ripgrep (PATH) instead of bundled @vscode/ripgrep (often faster).
+# https://github.com/terrylica/cc-skills/issues/3
+export USE_BUILTIN_RIPGREP=0
+
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PNPM_HOME="$HOME/Library/pnpm"
 export BUN_INSTALL="$HOME/.bun"
 
+# --- Secrets (tokens, keys) ---
+# Load secrets from a non-tracked file (safe to commit this line)
+[ -f ~/.secrets ] && source ~/.secrets
+
 # --- Aliases ---
 # Terminal themes
-alias lmm='kitty +kitten themes --reload-in=all Tomorrow && theme_tomorrow && fig theme light'
+alias lmm='kitty +kitten themes --reload-in=all Tomorrow && theme_tomorrow'
 
 # Configs
 alias dotf='cd ~/dotfiles && open -a Cursor .'
@@ -138,8 +119,6 @@ alias shadd="pnpm dlx shadcn@latest add"
 # Start kanata
 alias kb="sudo kanata -c ~/dotfiles/kanata/kanata.kbd"
 
-# Restart kiro-cli inline completions (legacy "fig" name)
-alias fig='kiro-cli inline disable &>/dev/null; kiro-cli inline enable && echo "Kiro inline restarted"'
 
 # --- Functions ---
 # Kill process(es) on specified port(s)
@@ -175,5 +154,5 @@ alias clauto="claude --dangerously-skip-permissions"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+# Kiro CLI post block (disabled)
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

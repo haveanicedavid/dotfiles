@@ -10,6 +10,7 @@ Personal dotfiles repository containing configuration for development tools on m
 
 - `nvim/` - LazyVim-based Neovim config. Plugins in `lua/plugins/`, core config in `lua/config/`
 - `claude/` - Claude Code settings and plugin config (symlinked to `~/.claude`)
+- `codex/` - Codex settings and config (symlinked to `~/.codex`)
 - `cursor/`, `vscode/`, `windsurf/` - VS Code-family editor settings and keybindings
 - `kanata/` - Keyboard remapping config (run with `sudo kanata -c ~/dotfiles/kanata/kanata.kbd`)
 - `karabiner/` - Karabiner-Elements config (using Goku/edn format)

@@ -1,10 +1,10 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
-  },
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
     "allow": [
@@ -44,7 +44,9 @@
       "Bash(claude mcp remove:*)",
       "Bash(lsof:*)",
       "Bash(pnpm dev)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(curl:*)",
+      "Bash(git:*)"
     ],
     "deny": [
       "Bash(sudo rm:*)",
@@ -79,58 +81,10 @@
       "Bash(wget * | sh:*)",
       "Bash(wget * | bash:*)"
     ],
-    "ask": [
-      "Bash(curl:*)",
-      "Bash(git:*)"
-    ],
+    "ask": [],
     "defaultMode": "acceptEdits",
     "additionalDirectories": [
       ".worktrees/"
-    ]
-  },
-  "hooks": {
-    "UserPromptSubmit": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.superconductor/hooks/notify.sh"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.superconductor/hooks/notify.sh"
-          }
-        ]
-      }
-    ],
-    "PermissionRequest": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.superconductor/hooks/notify.sh"
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/ddaniel/.superconductor/hooks/notify.sh"
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
@@ -141,17 +95,16 @@
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
-    "superpowers@superpowers-marketplace": true,
     "code-review@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
-    "claude-notifications-go@claude-notifications-go": false,
     "frontend-design@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "episodic-memory@superpowers-marketplace": true
+    "episodic-memory@superpowers-marketplace": true,
+    "superpowers@superpowers-marketplace": true
   },
   "sandbox": {
     "enabled": false,
@@ -177,5 +130,7 @@
       "yarn",
       "bun"
     ]
-  }
+  },
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
 }

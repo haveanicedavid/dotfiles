@@ -1,0 +1,197 @@
+model = "gpt-5.3-codex"
+model_reasoning_effort = "high"
+personality = "pragmatic"
+web_search = 'live'
+plan_mode_reasoning_effort = "high"
+[projects."/Users/ddaniel/dev/l3/illa/site"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/dev/l3/illa"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/kanata"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.config"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/code/metta/extension/mettatate/mettatate-sidepanel"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/dev/l3/illa/api"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/dev/l3/illa/app"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/code/superconductor/superconductor"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/code/superconductor/landing"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/test/main"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/test"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/test/feat-update-landing"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/test/feat-test"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/workspace-6/swift-river"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/test/feat-update-docs"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/dev/l3/illa/auth-ui"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/dev/l3/illa/docs"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/test/swift-brook"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/illa/main"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/test/wip-flux-vortex"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/test/test-parent-folder-branch"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/illa/wip-flux-qubit"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/illa/test-parent"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/illa/wip-flux-vortex-2"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/dev/l3/illa/illa-auth"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/illa/wip-flux-josephson"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/illa/wip-flux-cryostat"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/illa/wip-shielded-perovskite-4e9c"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/cf06585b-759e-4733-807b-beb5a0190baf/wip-superfluid-lattice-20b7"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/4aab1ddc-7dde-41d3-aca0-367e6221d89e/main"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/82c0e4e3-0308-4e0e-89af-39ca6a5b06ec/main"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/82c0e4e3-0308-4e0e-89af-39ca6a5b06ec/wip-levitated-qubit-aa25"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/7ed2e477-af84-4111-8591-304e22c8b867/wip-pinned-magnon-5253"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/7ed2e477-af84-4111-8591-304e22c8b867/test-my-shared-workspace-manual-2"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/7ed2e477-af84-4111-8591-304e22c8b867/main"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/7ed2e477-af84-4111-8591-304e22c8b867/test-deleteme"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor/workspaces/f28950d9-38e1-4d19-a844-3bf27e8f49bf/feat-chat-rebuild"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor/workspaces/f28950d9-38e1-4d19-a844-3bf27e8f49bf/feat-chat-v2"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/dev/l3/illa/sdk"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor/workspaces/f28950d9-38e1-4d19-a844-3bf27e8f49bf/main"]
+trust_level = "trusted"
+
+[projects."/"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor/workspaces/f28950d9-38e1-4d19-a844-3bf27e8f49bf/wip-coherent-qubit-2fa7"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor/workspaces/f28950d9-38e1-4d19-a844-3bf27e8f49bf/feat-planning-ui-elements"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor/workspaces/f28950d9-38e1-4d19-a844-3bf27e8f49bf/feat-chat-v2-follow-up"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor/workspaces/f28950d9-38e1-4d19-a844-3bf27e8f49bf/chore-chat-v2-feedback-2"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/8a88484b-9624-4a70-a9e7-9434a307f3bf/main"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/8a88484b-9624-4a70-a9e7-9434a307f3bf/deleteme-testing"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/8a88484b-9624-4a70-a9e7-9434a307f3bf/test-deleteme"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor/workspaces/f28950d9-38e1-4d19-a844-3bf27e8f49bf/fix-chat-response-bugs"]
+trust_level = "trusted"
+
+[projects."/Users/ddaniel/.superconductor-dev/workspaces/9ee836e1-28ca-457c-b5cc-1625dceb7918/main"]
+trust_level = "trusted"
+
+[mcp_servers.serena]
+command = "uvx"
+args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex"]
+enabled = false
+
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+bearer_token_env_var = "GITHUB_PERSONAL_ACCESS_TOKEN"
+enabled = false
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+
+[notice]
+hide_gpt5_1_migration_prompt = true
+"hide_gpt-5.1-codex-max_migration_prompt" = true
+hide_rate_limit_model_nudge = true
+
+[notice.model_migrations]
+"gpt-5.1-codex-mini" = "gpt-5.3-codex"
+"gpt-5.2-codex" = "gpt-5.3-codex"
+"gpt-5.3-codex" = "gpt-5.4"
+
+[sandbox_workspace_write]
+network_access = true
+
+[features]
+multi_agent = true
+
+[tui]
+status_line = [
+  "model-with-reasoning",
+  "context-remaining",
+  "context-window-size",
+]
