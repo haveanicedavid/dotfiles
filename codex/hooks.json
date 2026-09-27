@@ -1,0 +1,125 @@
+{
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "command": "if [ -x '/Users/ddaniel/.unpeel/hooks/codex-notify-hook.sh' ]; then '/Users/ddaniel/.unpeel/hooks/codex-notify-hook.sh'; fi # unpeel-managed",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "command": "if [ -x '/Users/ddaniel/.unpeel/hooks/codex-notify-hook.sh' ]; then '/Users/ddaniel/.unpeel/hooks/codex-notify-hook.sh'; fi # unpeel-managed",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "command": "if [ -x '/Users/ddaniel/.unpeel/hooks/codex-notify-hook.sh' ]; then '/Users/ddaniel/.unpeel/hooks/codex-notify-hook.sh'; fi # unpeel-managed",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/ddaniel/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "command": "if [ -x '/Users/ddaniel/.unpeel/hooks/codex-notify-hook.sh' ]; then '/Users/ddaniel/.unpeel/hooks/codex-notify-hook.sh'; fi # unpeel-managed",
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  }
+}

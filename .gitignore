@@ -1,8 +1,32 @@
+.DS_Store
+
 nvim/lazy-lock.json
 /nvim/lua/plugins/codecompanion*
 
 .clj-kondo/
 .lsp
+.superpowers/
 
-# Claude Code task state (local only)
-claude/tasks/
+# Machine-local permission overrides
+settings.local.json
+
+# claude/ and codex/ are symlinked as ~/.claude and ~/.codex, so they fill up
+# with credentials, sessions, sqlite logs and caches. Track config only.
+/claude/*
+!/claude/settings.json
+!/claude/CLAUDE.md
+!/claude/RTK.md
+!/claude/skills/
+/claude/skills/synced/
+/claude/skills/.trash/
+!/claude/skills-off/
+
+/codex/*
+!/codex/AGENTS.md
+!/codex/RTK.md
+!/codex/config.toml
+!/codex/config.json
+!/codex/instructions.md
+!/codex/hooks.json
+!/codex/rules/
+!/codex/automations/

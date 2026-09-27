@@ -7,9 +7,9 @@
 (defsrc
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12   f13
   caps a s d f g h j k l ; '
-  tab bksl lmet rmet
+  tab bksl bspc lmet rmet
   fn
-  b c e i m n o p q r t u v w x y z , .
+  b c e i m n o p q r t u v w x y z , . /
   f22 f23 f24
 )
 (defvar
@@ -26,18 +26,17 @@
   ;; Caps lock: tap for esc, hold for ctrl AND activate nav layer
   escctrl (tap-hold $tap-time $hold-time esc @ctrl-nav)
 
-  ;; Home row mods
-  a (tap-hold $tap-time $hold-time a lmet)
-  s (tap-hold $tap-time $hold-time s (multi lalt (layer-while-held s-layer)))
+  ;; Home row: shift and ctrl mods
   d (tap-hold $tap-time $hold-time d lsft)
   f (tap-hold $tap-time $hold-time f @ctrl-nav)
-
-  ;; In base layer, these are normal home row mods
-  h h
   j (tap-hold $tap-time $hold-time j @rctrl-nav)
   k (tap-hold $tap-time $hold-time k rsft)
-  l (tap-hold $tap-time $hold-time l ralt)
-  ; (tap-hold $tap-time $hold-time ; rmet)
+
+  ;; Bottom row: cmd and alt mods (zx ./)
+  z (tap-hold $tap-time $hold-time z lmet)
+  x (tap-hold $tap-time $hold-time x (multi lalt (layer-while-held s-layer)))
+  dot (tap-hold $tap-time $hold-time . ralt)
+  slash (tap-hold $tap-time $hold-time / rmet)
 
   ;; Tab: tap for tab, hold for hyper (shift+ctrl+alt+cmd)
   hypertab (tap-hold 117 147 tab (multi lsft lctl lalt lmet))
@@ -45,11 +44,9 @@
   ;; Backslash: tap for backslash, hold for hyper
   hyperbslash (tap-hold 117 147 bksl (multi lsft lctl lalt lmet))
 
-  ;; Comma: tap for comma, hold for hyper
-  hypercomma (tap-hold $tap-time $hold-time , (multi lsft lctl lalt lmet))
-
-  ;; C: tap for c, hold for hyper
+  ;; C/,: tap for key, hold for hyper
   hyperc (tap-hold $tap-time $hold-time c (multi lsft lctl lalt lmet))
+  hypercomma (tap-hold $tap-time $hold-time , (multi lsft lctl lalt lmet))
 
   ;; Left cmd: tap for esc, hold for cmd
   lmetesc (tap-hold 100 100 esc lmet)
@@ -72,6 +69,8 @@
   ;; Word motions while holding any Ctrl source (Caps/F/J)
   nav-word-back (multi lalt @nav-left)
   nav-word-forward (multi lalt @nav-right)
+  nav-bspc (unmod (lctl rctl) bspc)
+  nav-del-word (multi lalt @nav-bspc)
 
   ;; Tab navigation (Cmd+Shift+[ / ])
   nav-tab-prev (multi lmet lsft @nav-bracket-left)
@@ -97,20 +96,20 @@
 )
 
 (deflayer base
-  (multi lmet spc) brup _    _    _    _    prev pp   next mute  voldwn volu  (multi lmet spc)
-  @escctrl @a @s @d @f g @h @j @k @l @; '
-  @hypertab @hyperbslash @lmetesc @rmetesc
+  brdn brup _    _    _    _    prev pp   next mute  voldwn volu  _
+  @escctrl a s @d @f g h @j @k l ; '
+  @hypertab @hyperbslash bspc @lmetesc @rmetesc
   @fnl
-  b @hyperc e i m n o p q r t u v w x y z @hypercomma .
+  b @hyperc e i m n o p q r t u v w @x y @z @hypercomma @dot @slash
   @f22-action @f23-action @f24-action
 )
 
 (deflayer fn
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12   f13
   @escctrl _ _ _ _ _ _ _ _ _ _ _
-  _   _    _    _
+  _   _    _    _    _
   fn
-  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
   _   _   _
 )
 
@@ -120,17 +119,17 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _     _     _     _
   _    _ _ _ _ _ @nav-left @nav-down @nav-up @nav-right _ _
-  _   _    _    _
+  _   _    @nav-del-word    _    _
   _
-  @nav-word-back _ _ _ _ _ _ _ _ _ _ _ _ @nav-word-forward _ _ _ @nav-tab-prev @nav-tab-next
+  @nav-word-back _ _ _ _ _ _ _ _ _ _ _ _ @nav-word-forward _ _ _ @nav-tab-prev @nav-tab-next _
   _   _   _
 )
 
 (deflayer s-layer
   _    _    _    _    _    _    _    _    _    _     _     _     _
   _    _ _ _ _ _ _ _ _ _ _ (unmod (lalt) grv)
-  _   _    _    _
+  _   _    _    _    _
   _
-  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
   _   _   _
 )

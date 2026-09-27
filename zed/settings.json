@@ -1,5 +1,25 @@
 {
   // Vim mode (you have this enabled)
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "completions": {
+    "lsp": true
+  },
+  "edit_predictions": {
+    "provider": "zed",
+    "mode": "eager"
+  },
+  "show_edit_predictions": true,
+  "disable_ai": false,
+  "git_panel": {
+    "dock": "right"
+  },
+  "vim": {
+    "use_system_clipboard": "never"
+  },
   "vim_mode": true,
 
   // Font settings (matching your VS Code config)
@@ -133,7 +153,7 @@
   // Project panel (sidebar)
   "project_panel": {
     "button": true,
-    "dock": "left",
+    "dock": "right",
     "git_status": true,
     "auto_reveal_entries": true,
     "auto_fold_dirs": false,
@@ -144,19 +164,25 @@
 
   // Outline panel
   "outline_panel": {
-    "dock": "left",
+    "dock": "right",
   },
 
   // Collaboration panel
   "collaboration_panel": {
-    "dock": "left",
+    "dock": "right",
   },
 
   // Assistant panel (AI)
   "agent": {
+    "tool_permissions": {
+      "default": "allow",
+      "tools": {}
+    },
+    "dock": "left",
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-20250514",
+      "effort": "high",
+      "provider": "copilot_chat",
+      "model": "gpt-5.4",
     },
   },
 
@@ -168,6 +194,7 @@
   // Language-specific settings
   "languages": {
     "TypeScript": {
+      "show_edit_predictions": true,
       "tab_size": 2,
       "format_on_save": "on",
       "formatter": "language_server",

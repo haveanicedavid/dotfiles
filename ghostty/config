@@ -4,7 +4,13 @@ macos-titlebar-style = tabs
 # macos-titlebar-style = transparent
 gtk-tabs-location = bottom
 
-shell-integration = detect
+# cmd+d / cmd+shift+d splits, cmd+t tabs, and new windows should start
+# in the current terminal directory when shell integration reports it.
+window-inherit-working-directory = true
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
+shell-integration = zsh
 shell-integration-features = no-title
 
 # Note: system bell is broken on macOS Ghostty (known issue)
@@ -33,6 +39,7 @@ font-feature = calt
 font-feature = liga
 
 keybind = cmd+zero=reset_font_size
+keybind = super+t=new_tab
 # keybind = cmd+c=copy_to_clipboard
 # keybind = cmd+v=paste_from_clipboard
 # keybind = global:cmd+grave_accent=toggle_quick_terminal

@@ -110,3 +110,7 @@ if status is-interactive
         eval (/opt/homebrew/bin/brew shellenv)
     end
 end
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/Users/ddaniel/.local/bin" $PATH

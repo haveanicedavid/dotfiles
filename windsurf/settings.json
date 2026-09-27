@@ -234,4 +234,8 @@
   "coderabbit.agentType": "Clipboard",
   "claudeCode.allowDangerouslySkipPermissions": true,
   "claudeCode.useCtrlEnterToSend": true,
+  "devin.autocompleteSpeed": "fast",
+  "devin.autoExecutionPolicy": "off",
+  "devin.explainAndFixInCurrentConversation": true,
+  "windsurf.allowCascadeAccessGitignoreFiles": true,
 }

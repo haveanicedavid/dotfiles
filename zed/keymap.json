@@ -47,7 +47,6 @@
     "context": "Editor && vim_mode == visual",
     "bindings": {
       "space /": "pane::DeploySearch",
-      "space a c": "assistant::InsertIntoEditor",
     },
   },
   {
@@ -95,4 +94,34 @@
       "cmd-shift-g": null,
     },
   },
+  {
+    "context": "FileFinder || FileFinder > Picker > Editor || FileFinder > Picker > menu",
+    "unbind": {
+      "cmd-j": "pane::SplitDown"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-j": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "FileFinder || FileFinder > Picker > Editor || FileFinder > Picker > menu",
+    "unbind": {
+      "cmd-j": "pane::SplitDown"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-j": "multi_workspace::ToggleWorkspaceSidebar"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "alt-cmd-j": "multi_workspace::ToggleWorkspaceSidebar"
+    }
+  }
 ]
